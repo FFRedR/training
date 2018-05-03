@@ -1,0 +1,46 @@
+sidebar.sidebar
+    .sidebar-mobile-close
+        <i class="fa fa-times" aria-hidden="true"></i>
+    .sidebar-wrap
+        .sidebar-nav-list
+            a(href="design-work.html").sidebar-nav-el Где купить
+            a(href="bmsw.html").sidebar-nav-el Для дилеров
+            a(href="technical-support.html").sidebar-nav-el Стать дилером
+            a(href="teaching.html").sidebar-nav-el рекламные материалы
+            a(href="teaching.html").sidebar-nav-el Документация
+        h3 Вам может быть интересно
+        .sidebar-events-date
+        .sidebar-banner(style="background-image:url(img/shutterstock_603274976.png)")
+            a.sidebar-banner-rel(href="#")
+            .sidebar-banner-content
+                .sidebar-banner-title Lorem ipsum dolor sit amet
+                .sidebar-banner-subtitle рекламный баннер 
+                    br
+                    | мероприятия
+        .sidebar-blocks-list
+            .sidebar-blocks-el
+                .sidebar-blocks-img(style="background-image: url(img/example.jpg)")
+                .sidebar-blocks-content
+                    .sidebar-blocks-title 
+                        a(href="/events-single.html") Сложившаяся структура организации
+                    .sidebar-blocks-txt.cutting Повседневная практика показывает, что укрепление и развитие структуры позволяет
+                    .rel-panel
+                        .rel-tags
+                            a.rel-tags-el(href="/2") хештег
+                            a.rel-tags-el(href="/2") хештег
+                        a.rel-a(href="/events-single.html")
+                            img(alt="" src="img/arr-orange.png")
+            - for (var i=0; i<2; i++) {
+                .sidebar-blocks-el
+                    .sidebar-blocks-img(style="background-image: url(img/example.jpg)")
+                    .sidebar-blocks-content
+                        .sidebar-blocks-title 
+                            a(href="/events-single.html") Сложившаяся структура организации
+                        .sidebar-blocks-txt.cutting Повседневная практика показывает, что укрепление и развитие структуры позволяет
+                        .rel-panel
+                            span 26.10.2017
+                            a.rel-a(href="/events-single.html")
+                                img(alt="" src="img/arr-orange.png")
+            - }
+    .sidebar-mobile-btn
+        <i class="fa fa-align-justify" aria-hidden="true"></i>

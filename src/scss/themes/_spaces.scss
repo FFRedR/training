@@ -1,0 +1,47 @@
+.m {
+    &b {
+        &-42 {
+            margin-bottom: 42px;
+        }
+        &-35 {
+            margin-bottom: 35px;
+        }
+        &-27 {
+            margin-bottom: 27px;
+        }
+        &-21 {
+            margin-bottom: 21px;
+        }
+        &-0 {
+            margin-bottom: 0;
+        }
+    }
+    &t {
+
+        &-24 {
+            margin-top: 24px;
+        }
+        &-20 {
+            margin-top: 20px;
+        }
+    }
+}
+.p {
+    &b {
+        &-0 {
+            padding-bottom: 0;
+        }
+
+        &-30 {
+            padding-bottom: 30px;
+        }
+    }
+    &t {
+        &-0 {
+            padding-bottom: 0;
+        }
+        &-30 {
+            padding-top: 30px;
+        }
+    }
+}
