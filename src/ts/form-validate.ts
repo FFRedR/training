@@ -1,11 +1,10 @@
 /** form control */
-declare let $: any;
-
+import Inputmask from "inputmask";
 export namespace FormValidation {
     export function init() {
-        $('*[type=tel]').inputmask("+7 (999) 999-99-99");
+        Inputmask("+7 (999) 999-99-99").mask('*[type=tel]');
         $("form input").blur(checker);
-        $("form .btn").click(checkFormStatus)
+        $("form .btn").click(checkFormStatus);
     }
     function checker() {
         if (!this.required && !this.value) return;

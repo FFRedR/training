@@ -5,9 +5,9 @@ html(lang="en")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 	
-		link(rel="stylesheet", href="css/main.css")
+		link(rel="stylesheet", href="css/app.css")
 		
-		title Title
+		title MiraSiteTemplate
 	
 	block vars
 	body(class=bodyClass)
@@ -20,5 +20,6 @@ html(lang="en")
 
 		block externalScripts
 		block scripts
-
+		script(src="lib/chunk-vendors.js")
+		script(src="app.js")
 		block inlineScripts

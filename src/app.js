@@ -11,7 +11,9 @@ import './scss/main.scss';
 /**
  * script
  */
-import './ts/main.ts';
+import { MainApp } from './ts/main';
+console.info(MainApp())
+window.$ = $;
 
 /**
  * pages

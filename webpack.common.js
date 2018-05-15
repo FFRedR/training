@@ -1,27 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = env => {
-    var env = env.production ? "production" : "development";
     process.env.NODE_ENV = env;
     console.log(process.env.NODE_ENV);
     return {
         mode: env,
-        devServer: {
-            contentBase: path.join(__dirname, "dist"),
-            hot: false,
-            compress: false,
-            port: 8000,
-            open: true,
-            watchContentBase: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            }
-        },
+        devtool: process.env.NODE_ENV === "production" ? "" : "source-map",
         context: path.resolve(__dirname, 'src'),
         entry: {
             app: './app',
@@ -30,13 +17,39 @@ module.exports = env => {
             path: path.resolve(__dirname, 'dist'),
             publicPath: '/',
             filename: '[name].js',
+            chunkFilename: 'lib/chunk-[name].js',
+        },
+        /*externals: {///если надо подключать внешние файлы через script, но оставить import, но без внедрения в бандл
+            jquery: 'jQuery'
+        },*/
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    default: false,
+                    commons: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: "vendors",
+                        chunks: "all",
+                    },
+                    libs: {
+                        minSize: 3000,
+                        test: /[\\/]lib[\\/]js[\\/]/,
+                        name(a, b) {
+                            //console.log(b[0].name);
+                            return b[0].name
+                        },
+                        chunks: "async",
+                        //enforce: true,
+                        //priority: -1,
+                    },
+                }
+            }
         },
         module: {
             rules: [
                 {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
-                    exclude: /node_modules/
                 }, {
                     test: /\.css$/,
                     use: ExtractTextPlugin.extract({
@@ -44,12 +57,14 @@ module.exports = env => {
                         use: [{
                             loader: 'css-loader',
                             options: {
+                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
                                 minimize: process.env.NODE_ENV === "production" ? true : false,
                                 importLoaders: 1
                             },
                         }, {
                             loader: 'postcss-loader',
                             options: {
+                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
                                 config: {
                                     path: './postcss.config.js',
                                     ctx: {
@@ -59,24 +74,25 @@ module.exports = env => {
                                 },
 
                             }
-                        }, {
+                        }, /*{
                             loader: 'resolve-url-loader'
-                        }],
+                        }*/],
                     })
                 }, {
                     test: /\.(scss|sass)$/,
-                    use: /*['css-hot-loader'].concat(*/ExtractTextPlugin.extract({
+                    use: ExtractTextPlugin.extract({
                         fallback: "style-loader",
                         use: [{
                             loader: "css-loader", // translates CSS into CommonJS
                             options: {
                                 minimize: process.env.NODE_ENV === "production" ? true : false,
                                 url: true,
-                                sourceMap: true
+                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
                             }
                         }, {
                             loader: 'postcss-loader',
                             options: {
+                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
                                 config: {
                                     path: './postcss.config.js',
                                     ctx: {
@@ -86,16 +102,18 @@ module.exports = env => {
                                 },
 
                             }
-                        }, {
-                            loader: 'resolve-url-loader'
-                        }, {
+                        }/*, {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
+                            }
+                        }*/, {
                             loader: "sass-loader", // compiles Sass to CSS
                             options: {
-                                sourceMap: true
+                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
                             }
                         }],
-                    })/*)*/,
-                    exclude: /node_modules/
+                    }),
                 }, {
                     test: /\.(pug|jade)$/,
                     use: [
@@ -121,18 +139,7 @@ module.exports = env => {
                                 pretty: true,
                             }
                         },
-                        /*{
-                            loader: 'html-loader'
-                        },
-                        {
-                            loader: 'pug-html-loader',
-                            options: {
-                                pretty: true,
-                            }
-                        },*/
-
                     ],
-                    exclude: /node_modules/
 
                 }, {
                     test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.wav$|\.mp3$/,
@@ -163,25 +170,22 @@ module.exports = env => {
             ]
         },
         resolve: {
-            extensions: ['.tsx', '.ts', '.js', '.scss']
+            extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
+            modules: ["node_modules"]
         },
         plugins: [
             new CleanWebpackPlugin(['dist']),///очистка dist
             new ExtractTextPlugin("css/[name].css", {
                 allChunks: true,
             }),
-            /*new HtmlWebpackPlugin({
-                template: './index.pug',
-            })*/
-            new webpack.NamedModulesPlugin(),
-            new webpack.HotModuleReplacementPlugin(),
-            /*new BrowserSyncPlugin({
-                // browse to http://localhost:3000/ during development,
-                // ./public directory is being served
-                host: 'localhost',
-                port: 8080,
-                server: { baseDir: ['dist'] },
-            })*/
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify(env)
+            }),
+            new webpack.ProvidePlugin({
+                $: "jquery",
+                jQuery: "jquery",
+                "window.jQuery": "jquery"
+            })
         ]
     }
 };

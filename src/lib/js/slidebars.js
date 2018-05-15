@@ -7,8 +7,7 @@
  * License: MIT
  * License url: http://www.adchsm.com/slidebars/license/
  */
-
-var slidebars = function () {
+export var slidebars = function () {
 
 	/**
 	 * Setup

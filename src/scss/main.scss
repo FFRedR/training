@@ -2,7 +2,8 @@
 @import "base/_mixins.scss";
 
 /*external*/
-@import "hamburgers/_hamburgers.scss";
+//@import "hamburgers/dist/hamburgers.css";
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "font-awesome/scss/_font-awesome.scss";
 @import "slidebars/_slidebars.scss";
 @import "external/_datepicker.scss";
@@ -30,4 +31,3 @@
 @import "themes/_spaces.scss";
 @import "themes/_colors.scss";
 @import "themes/_slides.scss";
-
