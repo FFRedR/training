@@ -46,6 +46,33 @@ $ npm run dev
         import * as $ from "jquery";
         ```
         Скрипт будет подтянут из ``node_modules`` и записан в файл ``lib/chunk-commons.js``. При этом все скрипты из ``node_modules`` при статчином импорте через ``import from`` запишутся в `lib/chunk-commons.js``.
+
+3.  Чтобы подключить новые страницы, глобальные стили и скрипты используйте ``import`` в файле ``app.js``, например
+    ```
+    /**
+    * fonts
+    */
+    import './fonts/OpenSans/stylesheet.css';
+    import './fonts/Roboto/stylesheet.css';
+
+    /**
+    * main style
+    */
+    import './scss/main.scss';
+
+    /**
+    * script
+    */
+    import { MainApp } from './ts/main';
+
+    /**
+    * pages
+    */
+    import './index.pug';
+    import './contacts.pug';
+    import './products.pug';
+    ```
+4.  Xnj,s
 # 3. Работа с npm scripts
 **Собрать проект**
 -----------------------------------
