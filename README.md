@@ -45,7 +45,7 @@ $ npm run dev
         ```
         import * as $ from "jquery";
         ```
-        Скрипт будет подтянут из ``node_modules`` и записан в файл ``lib/chunk-commons.js``. При этом все скрипты из ``node_modules`` при статчином импорте через ``import from`` запишутся в `lib/chunk-commons.js``.
+        Скрипт будет подтянут из ``node_modules`` и записан в файл ``lib/chunk-vendors.js``. При этом все скрипты из ``node_modules`` при статчином импорте через ``import from`` запишутся в `lib/chunk-commons.js``.
 
 3.  Чтобы подключить новые страницы, глобальные стили и скрипты используйте ``import`` в файле ``app.js``, например
     ```
@@ -72,7 +72,29 @@ $ npm run dev
     import './contacts.pug';
     import './products.pug';
     ```
-4.  Xnj,s
+**Динамический импорт**
+--------
+1.  Динамический импорт позволяет подгружать модули по мере необходимости, например
+    ```
+    /// file: slidebars.js
+    export var slidebars = function () {
+        //////////any code///////////
+    }
+
+    /// file: navigation.js
+    import(/* webpackChunkName: "slidebars" */"../lib/js/slidebars.js").then((importStatement: any) => {
+        controller = new importStatement.slidebars();
+        //////////any code///////////
+    });
+    ```
+    Здесь ``webpackChunkName`` задает имя выходного файла для ``slidebars.js``. В данном случае выходным файлом будет ``dist/lib/chunk-slidebars.js``.
+
+2.  Так же модули можно загружать заранее, чтобы во время выполнения кода, модуль уже был загружен.
+    ```
+    import(/* webpackPrefetch: true, webpackChunkName: "slidebar" */"../lib/js/slidebars.js");
+    ```
+    При этом сам модуль подключится в ``head`` отдельным тегом.
+
 # 3. Работа с npm scripts
 **Собрать проект**
 -----------------------------------
