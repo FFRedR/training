@@ -148,6 +148,7 @@ module.exports = env => {
                             loader: 'file-loader',
                             options: {
                                 name: '[path][name].[ext]',
+                                publicPath: process.env.NODE_ENV === "production" ? '../' : '',
                                 useRelativePath: false
                             }
                         }
@@ -160,6 +161,7 @@ module.exports = env => {
                             options: {
                                 name: '[name].[ext]',
                                 outputPath: 'fonts/',
+                                publicPath:  process.env.NODE_ENV === "production" ? '../fonts/' : '',
                                 useRelativePath: false
                             }
                         }

@@ -8,14 +8,14 @@ module.exports = merge(common("development"), {
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         hot: false,
-        inline: true,
+        inline: false,
         progress: true,
         compress: false,
         port: 8000,
         open: true,
-        watchContentBase: true,
+        watchContentBase: false,
         headers: {
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
         }
     },
     plugins: [
