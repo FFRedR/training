@@ -5,3 +5,11 @@ div(style="display: flex; flex-direction: column; align-items: center; justify-c
         a(href="#" style="font-size: 1.4rem; color: #1db5b3; font-family: Robotol font-weight: 300") website
         |&nbsp;&nbsp;|&nbsp;&nbsp;
         a(href="#" style="font-size: 1.4rem; color: #1db5b3; font-family: Robotol font-weight: 300") template
+
+        form
+            //input(type="text" data-error-class='v-error' data-valid-class='v-valid' data-prefix='pre-' required)
+            //input(type="tel"  data-error-msg="fgdgdfg" required)
+            input(type="password" data-bind="pass" required)
+            input(type="password" data-type="retryPassword" data-bind="pass" required)
+            input(type="email", required)
+            button.btn.btn-submit отправить

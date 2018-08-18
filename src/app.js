@@ -4,6 +4,11 @@
 import './fonts/OpenSans/stylesheet.css';
 
 /**
+ * external styles
+ */
+import "@fortawesome/fontawesome-free/css/all.css";
+
+/**
  * main style
  */
 import './scss/main.scss';

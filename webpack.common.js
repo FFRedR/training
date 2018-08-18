@@ -48,6 +48,17 @@ module.exports = env => {
         module: {
             rules: [
                 {
+                    test: /\.js$/,
+                    exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                            //plugins: [require("@babel/plugin-transform-classes")]
+                        }
+                    }
+                },
+                {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
                 }, {
@@ -142,7 +153,7 @@ module.exports = env => {
                     ],
 
                 }, {
-                    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.wav$|\.mp3$/,
+                    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.wav$|\.mp3$|\.json$/,
                     use: [
                         {
                             loader: 'file-loader',
@@ -161,7 +172,7 @@ module.exports = env => {
                             options: {
                                 name: '[name].[ext]',
                                 outputPath: 'fonts/',
-                                publicPath:  process.env.NODE_ENV === "production" ? '../fonts/' : '',
+                                publicPath: process.env.NODE_ENV === "production" ? '../fonts/' : '',
                                 useRelativePath: false
                             }
                         }
@@ -186,7 +197,8 @@ module.exports = env => {
             new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery",
-                "window.jQuery": "jquery"
+                "window.jQuery": "jquery",
+                //Swiper: ["swiper","default"]
             })
         ]
     }
