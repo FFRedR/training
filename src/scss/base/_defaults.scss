@@ -1,117 +1,45 @@
 * {
     box-sizing: border-box;
 }
-html,
+html, body {
+
+}
+html {
+    font-size: $f-size;
+    font-family: $f-m;
+    letter-spacing: $f-letter-spacing;
+}
 body {
-  height: 100%;
-  font: normal 14px/22px $f-os;
+  min-height: 100vh;
+  position: relative;
+}
+.all-wrapper {
 }
 img {
     max-width: 100%;
-    max-height: fit-content;
 }
-.all-wrapper {
-    min-height: 100%;
-    padding-top: 120px;
-    padding-bottom: 60px;
-}
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 15px;
-    & > * {
-        width: 100%;
-        max-width: 1140px;
-    }
-}
+
 h1 {
-    font: 300 30px/21px $f-r;
-    @include letter-spacing(50);
-    color: black;
-    margin: 0.92em 0 0.62em;
-}
-.h1-2 {
-    @include letter-spacing(75);
-    color: #101e2e;
-    text-transform: uppercase;
+  @include text-setting('display-4');
 }
 h2 {
-    font: bold 20px $f-r;
-    line-height: normal;
-    @include letter-spacing(0);
-    color: $c-blue;
-    margin: 1.2em 0 0.52em;
+  @include text-setting('display-3');
 }
 h3 {
-    font: bold 20px $f-r;
-    line-height: normal;
-    @include letter-spacing(0);
-    color: $c-orange;
-    margin: 1.2em 0 0.52em;
+  @include text-setting('display-2');
 }
 h4 {
-    font: normal 16px/22px $f-os;
-    @include letter-spacing(0);
-    color: $c-blue;
-    margin: 1.8em 0 1em;
+  @include text-setting('display-1');
 }
 h5 {
-    font: normal 16px/21px $f-r;
-    @include letter-spacing(0);
-    margin: 0;
+  @include text-setting('headline');
 }
-
-a {
-    text-decoration: inherit;
-    color: inherit;
+h6 {
+  @include text-setting('title');
 }
 p {
-    letter-spacing: 0;
-    color: black;
-    margin: 0.72em 0;
+  @include text-setting('body-1');
 }
-#map {
-    width: 100%;
-    height: 520px;
-    background-color: rgba(128, 128, 128, 0.623);
-}
-hr {
-    opacity: 0.4;
-}
-.btn {
-    display: inline-block;
-    padding: 14px 20px;
-    background-color: $c-blue;
-    color: white;
-    text-transform: uppercase;
-    font: 600 14px $f-os;
-    @include letter-spacing(75);
-    border-radius: 22.5px;
-    cursor: pointer;
-    user-select: none;
-    border: 0;
-    &:hover {
-        background-color: $c-blue-dark;
-    }
-    &:active {
-        transform: scale(0.95);
-    }
-    &-orange {
-        background-color: $c-orange;
-        &:hover {
-            background-color: $c-orange-dark;
-        }
-    }
-    &-mini {
-        padding: 11px 20px;
-    }
-    &-long {
-        padding: 11px 31px;
-    }
-}
+a {
 
-.cst-error {
-    border-bottom: 1px solid red
 }

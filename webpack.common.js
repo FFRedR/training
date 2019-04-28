@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = env => {
     process.env.NODE_ENV = env;
@@ -9,9 +11,8 @@ module.exports = env => {
     return {
         mode: env,
         devtool: process.env.NODE_ENV === "production" ? "" : "source-map",
-        context: path.resolve(__dirname, 'src'),
         entry: {
-            app: './app',
+            app: './src/app',
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -54,18 +55,32 @@ module.exports = env => {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env'],
-                            //plugins: [require("@babel/plugin-transform-classes")]
                         }
                     }
                 },
                 {
                     test: /\.tsx?$/,
-                    use: 'ts-loader',
-                }, {
+                    exclude: /node_modules/,
+                    use: [
+                        {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env'],
+                            }
+                        },
+                        {
+                            loader: "ts-loader",
+                            options: {
+                                transpileOnly: true
+                            }
+                        }
+                    ]
+                },
+                {
                     test: /\.css$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: "style-loader",
-                        use: [{
+                    use: [
+                        MiniCssExtractPlugin,
+                        {
                             loader: 'css-loader',
                             options: {
                                 sourceMap: process.env.NODE_ENV === "production" ? false : true,
@@ -85,15 +100,12 @@ module.exports = env => {
                                 },
 
                             }
-                        }, /*{
-                            loader: 'resolve-url-loader'
-                        }*/],
-                    })
+                        }]
                 }, {
                     test: /\.(scss|sass)$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: "style-loader",
-                        use: [{
+                    use: [
+                        MiniCssExtractPlugin,
+                        {
                             loader: "css-loader", // translates CSS into CommonJS
                             options: {
                                 minimize: process.env.NODE_ENV === "production" ? true : false,
@@ -113,22 +125,19 @@ module.exports = env => {
                                 },
 
                             }
-                        }/*, {
-                            loader: 'resolve-url-loader',
-                            options: {
-                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
-                            }
-                        }*/, {
+                        }, {
                             loader: "sass-loader", // compiles Sass to CSS
                             options: {
                                 sourceMap: process.env.NODE_ENV === "production" ? false : true,
                             }
                         }],
-                    }),
                 }, {
                     test: /\.(pug|jade)$/,
                     use: [
                         {
+                            loader: 'pug-loader'
+                        }
+                        /*{
                             loader: 'file-loader',
                             options: {
                                 name: '[name].html',
@@ -149,7 +158,7 @@ module.exports = env => {
                             options: {
                                 pretty: true,
                             }
-                        },
+                        },*/
                     ],
 
                 }, {
@@ -187,10 +196,9 @@ module.exports = env => {
             modules: ["node_modules"]
         },
         plugins: [
-            new CleanWebpackPlugin(['dist']),///очистка dist
-            new ExtractTextPlugin("css/[name].css", {
-                allChunks: true,
-            }),
+            new ForkTsCheckerWebpackPlugin(),
+            new CleanWebpackPlugin(),///очистка dist
+            new MiniCssExtractPlugin({ filename: "css/[name].css" }),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(env)
             }),
@@ -199,6 +207,10 @@ module.exports = env => {
                 jQuery: "jquery",
                 "window.jQuery": "jquery",
                 //Swiper: ["swiper","default"]
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                template: 'src/index.pug'
             })
         ]
     }

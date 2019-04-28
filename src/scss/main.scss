@@ -1,11 +1,13 @@
 /*mixins*/
-@import "base/_mixins.scss";
+@import "mixins/_helpers.scss";
+@import "mixins/_iterators.scss";
+@import "mixins/_font.scss";
+@import "mixins/_graphics.scss";
+@import "mixins/_responsive.scss";
+@import "mixins/_themes.scss";
+@import "mixins/_form.scss";
 
 /*external*/
-//@import "hamburgers/dist/hamburgers.css";
-@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
-@import "slidebars/_slidebars.scss";
-@import "external/_datepicker.scss";
 
 /*
 * Project style
@@ -14,19 +16,22 @@
 @import "base/_normalize.scss";
 @import "base/_variables.scss";
 @import "base/_defaults.scss";
-@import "base/_std.scss";
-
 
 /*layouts*/
 @import "layouts/_footer.scss";
 @import "layouts/_header.scss";
-@import "layouts/_grid.scss";
-@import "layouts/_sidebar.scss";
 
 /*modules*/
-@import "modules/_txt-pages.scss";
+
 
 /*themes*/
 @import "themes/_spaces.scss";
 @import "themes/_colors.scss";
-@import "themes/_slides.scss";
+@import "themes/_text.scss";
+@import "themes/_buttons.scss";
+@import "themes/_grid.scss";
+@import "themes/_positions.scss";
+@import "themes/_form.scss";
+
+/*pages*/
+

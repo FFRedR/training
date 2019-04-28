@@ -120,11 +120,11 @@ export default class Validate {
     constructor(params?: Config) {
         if (params) mergeDeep(this.config, params)
         if (this.config.target) {
-            let target = $(this.config.target);
+            let target = $(this.config.target as any);
             if (target.prop("tagName") === 'FORM') {
-                target.submit((e) => this.checkFormStatus(e))
+                target.submit((e: any) => this.checkFormStatus(e))
             }
-            else target.click((e) => this.checkFormStatus(e))
+            else target.click((e: any) => this.checkFormStatus(e))
             target.closest("form").find("input:required, textarea:required")
                 .blur((e) => this.checker(e.currentTarget as HTMLInputElement | HTMLTextAreaElement))
                 .each((ind: number, val: HTMLInputElement) => {
@@ -142,7 +142,7 @@ export default class Validate {
             el.value ? this.validAct(el) : this.errorAct(el);
         }
     }
-    checkFormStatus(e: JQuery.Event<HTMLElement, null>) {
+    checkFormStatus(e: any) {
         var form = $(e.currentTarget).closest("form");
         form.find("input, textarea").each((ind: number, el: HTMLInputElement | HTMLTextAreaElement) => {
             this.checker(el)
@@ -162,7 +162,7 @@ export default class Validate {
             el.classList.add(this.getStatusClass(el, 'errorClass'));
 
 
-            (el as any).onkeyup = (e: JQuery.Event<HTMLElement, null>) => this.checker(e.currentTarget as HTMLInputElement | HTMLTextAreaElement);
+            (el as any).onkeyup = (e: any) => this.checker(e.currentTarget as HTMLInputElement | HTMLTextAreaElement);
         } else if (el.validationMessage !== (el.value ? this.getErrMsg(el) : this.config.emptyMsg)) {
             el.setCustomValidity(el.value ? this.getErrMsg(el) : this.config.emptyMsg);
             console.log(el.value ? this.getErrMsg(el) : this.config.emptyMsg);
