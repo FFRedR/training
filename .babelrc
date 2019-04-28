@@ -3,9 +3,9 @@
         ["@babel/preset-env", {
             "targets": {
               "ie": 11,
-              "browsers": ["last 2 versions", "safari 7"]
+              "browsers": ["last 2 versions", "safari 9"]
             }
           }]
     ],
-    "plugins": ["@babel/plugin-transform-classes", "transform-es2015-classes"]
+    "plugins": ["transform-es2015-classes"]
 }

@@ -79,23 +79,22 @@ module.exports = env => {
                 {
                     test: /\.css$/,
                     use: [
-                        MiniCssExtractPlugin,
+                        MiniCssExtractPlugin.loader,
                         {
                             loader: 'css-loader',
-                            options: {
+                            /*options: {
                                 sourceMap: process.env.NODE_ENV === "production" ? false : true,
                                 minimize: process.env.NODE_ENV === "production" ? true : false,
                                 importLoaders: 1
-                            },
+                            },*/
                         }, {
                             loader: 'postcss-loader',
                             options: {
-                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
+                                //sourceMap: process.env.NODE_ENV === "production" ? false : true,
                                 config: {
                                     path: './postcss.config.js',
                                     ctx: {
                                         env: env,
-                                        cssnext: {},
                                     }
                                 },
 
@@ -104,23 +103,22 @@ module.exports = env => {
                 }, {
                     test: /\.(scss|sass)$/,
                     use: [
-                        MiniCssExtractPlugin,
+                        MiniCssExtractPlugin.loader,
                         {
                             loader: "css-loader", // translates CSS into CommonJS
-                            options: {
+                            /*options: {
                                 minimize: process.env.NODE_ENV === "production" ? true : false,
-                                url: true,
                                 sourceMap: process.env.NODE_ENV === "production" ? false : true,
-                            }
+                                url: true,
+                            }*/
                         }, {
                             loader: 'postcss-loader',
                             options: {
-                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
+                                //sourceMap: process.env.NODE_ENV === "production" ? false : true,
                                 config: {
                                     path: './postcss.config.js',
                                     ctx: {
                                         env: env,
-                                        cssnext: {},
                                     }
                                 },
 
