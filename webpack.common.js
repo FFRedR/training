@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -79,18 +80,22 @@ module.exports = env => {
                 {
                     test: /\.css$/,
                     use: [
-                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                sourceMap: process.env.NODE_ENV !== "production",
+                            }
+                        },
                         {
                             loader: 'css-loader',
-                            /*options: {
-                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
-                                minimize: process.env.NODE_ENV === "production" ? true : false,
+                            options: {
+                                sourceMap: process.env.NODE_ENV !== "production",
                                 importLoaders: 1
-                            },*/
+                            },
                         }, {
                             loader: 'postcss-loader',
                             options: {
-                                //sourceMap: process.env.NODE_ENV === "production" ? false : true,
+                                sourceMap: process.env.NODE_ENV !== "production",
                                 config: {
                                     path: './postcss.config.js',
                                     ctx: {
@@ -103,18 +108,22 @@ module.exports = env => {
                 }, {
                     test: /\.(scss|sass)$/,
                     use: [
-                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                sourceMap: process.env.NODE_ENV !== "production",
+                            }
+                        },
                         {
                             loader: "css-loader", // translates CSS into CommonJS
-                            /*options: {
-                                minimize: process.env.NODE_ENV === "production" ? true : false,
-                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
-                                url: true,
-                            }*/
+                            options: {
+                                sourceMap: process.env.NODE_ENV !== "production",
+                                importLoaders: 2,
+                            }
                         }, {
                             loader: 'postcss-loader',
                             options: {
-                                //sourceMap: process.env.NODE_ENV === "production" ? false : true,
+                                sourceMap: process.env.NODE_ENV !== "production",
                                 config: {
                                     path: './postcss.config.js',
                                     ctx: {
@@ -126,37 +135,18 @@ module.exports = env => {
                         }, {
                             loader: "sass-loader", // compiles Sass to CSS
                             options: {
-                                sourceMap: process.env.NODE_ENV === "production" ? false : true,
+                                sourceMap: process.env.NODE_ENV === "production",
                             }
                         }],
                 }, {
                     test: /\.(pug|jade)$/,
                     use: [
                         {
-                            loader: 'pug-loader'
-                        }
-                        /*{
-                            loader: 'file-loader',
-                            options: {
-                                name: '[name].html',
-                                outputPath: ''
-                            }
-                        },
-                        {
-                            loader: 'extract-loader'
-                        },
-                        {
-                            loader: 'html-loader',
-                            options: {
-                                interpolate: true
-                            }
-                        },
-                        {
-                            loader: 'pug-html-loader',
+                            loader: 'pug-loader',
                             options: {
                                 pretty: true,
                             }
-                        },*/
+                        }
                     ],
 
                 }, {
@@ -206,10 +196,26 @@ module.exports = env => {
                 "window.jQuery": "jquery",
                 //Swiper: ["swiper","default"]
             }),
-            new HtmlWebpackPlugin({
-                filename: 'index.html',
-                template: 'src/index.pug'
-            })
+            ...generateHtmlPlugins('src'),
         ]
     }
 };
+
+
+function generateHtmlPlugins(templateDir) {
+    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+    return templateFiles.filter((item) => {
+        const parts = item.split('.')
+        const extension = parts[1]
+        return /pug/.test(extension)
+    }).map(item => {
+        // Split names and extension
+        const parts = item.split('.')
+        const name = parts[0]
+        const extension = parts[1]
+        return new HtmlWebpackPlugin({
+            filename: `${name}.html`,
+            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
+        })
+    })
+}
