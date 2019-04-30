@@ -3,7 +3,7 @@
   "version": "0.6.1",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "watch": "webpack --watch -config webpack.prod.js",
+    "watch": "webpack --watch  --progress --config webpack.prod.js",
     "serve": "webpack-dev-server --config webpack.dev.js"
   },
   "compilerOptions": {

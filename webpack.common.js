@@ -18,32 +18,41 @@ module.exports = env => {
         output: {
             path: path.resolve(__dirname, 'dist'),
             publicPath: '/',
-            filename: '[name].js',
-            chunkFilename: 'lib/chunk-[name].js',
+            filename: '[name].[hash].js',
+            chunkFilename: 'lib/chunk-[name].[chunkhash].js',
         },
         /*externals: {///если надо подключать внешние файлы через script, но оставить import, но без внедрения в бандл
             jquery: 'jQuery'
         },*/
         optimization: {
             splitChunks: {
+                chunks: 'async',
+                minSize: 30000,
+                maxSize: 0,
+                minChunks: 1,
+                maxAsyncRequests: 5,
+                maxInitialRequests: 3,
+                automaticNameDelimiter: '~',
+                name: true,
                 cacheGroups: {
-                    default: false,
-                    commons: {
+                    vendors: {
                         test: /[\\/]node_modules[\\/]/,
-                        name: "vendors",
-                        chunks: "all",
+                        priority: -10,
+                        name: 'vendor',
+                        chunks: 'all',
                     },
                     libs: {
                         minSize: 3000,
                         test: /[\\/]lib[\\/]js[\\/]/,
-                        name(a, b) {
-                            //console.log(b[0].name);
-                            return b[0].name
-                        },
-                        chunks: "async",
-                        //enforce: true,
-                        //priority: -1,
+                        chunks: 'all',
+                        name: 'lib',
                     },
+                    default: {
+                        minChunks: 2,
+                        priority: -20,
+                        reuseExistingChunk: true,
+                    }
+
                 }
             }
         },
@@ -206,13 +215,16 @@ function generateHtmlPlugins(templateDir) {
     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
     return templateFiles.filter((item) => {
         const parts = item.split('.')
-        const extension = parts[1]
-        return /pug/.test(extension)
+        const extension = parts[parts.length - 1]
+        return /pug/.test(extension) || /html/.test(extension)
     }).map(item => {
         // Split names and extension
         const parts = item.split('.')
-        const name = parts[0]
-        const extension = parts[1]
+        const extension = parts[parts.length - 1]
+        parts.splice(parts.length - 1,1)
+        const name = parts.join('.')
+        console.log(name)
+        
         return new HtmlWebpackPlugin({
             filename: `${name}.html`,
             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
