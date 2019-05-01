@@ -13,8 +13,3 @@ import './scss/main.scss';
 import { MainApp } from './ts/main';
 console.info(MainApp())
 window.$ = $;
-
-/**
- * pages
- */
-import './index.pug';

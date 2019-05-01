@@ -30,7 +30,7 @@ module.exports = merge(common("development"), {
         compress: false,
         host: '0.0.0.0',
         port: port,
-        open: false,
+        open: `${type === 'http' ? 'http://' : 'https://'}localhost:${port}/webpack-dev-server/`,
         watchContentBase: false,
         headers: {
             'Access-Control-Allow-Origin': '*',

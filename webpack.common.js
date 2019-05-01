@@ -223,7 +223,6 @@ function generateHtmlPlugins(templateDir) {
         const extension = parts[parts.length - 1]
         parts.splice(parts.length - 1,1)
         const name = parts.join('.')
-        console.log(name)
         
         return new HtmlWebpackPlugin({
             filename: `${name}.html`,
