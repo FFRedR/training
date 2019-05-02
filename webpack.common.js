@@ -144,7 +144,7 @@ module.exports = env => {
                         }, {
                             loader: "sass-loader", // compiles Sass to CSS
                             options: {
-                                sourceMap: process.env.NODE_ENV === "production",
+                                sourceMap: process.env.NODE_ENV !== "production",
                             }
                         }],
                 }, {

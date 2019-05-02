@@ -19,6 +19,12 @@ img {
     max-width: 100%;
 }
 
+
+@each $level, $map in $text-settings {
+  .#{$level} {
+      @include print($map)
+  }
+}
 h1 {
   @include text-setting('display-4');
 }

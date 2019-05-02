@@ -1,7 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const WebpackShellPlugin = require('webpack-shell-plugin');
 const port = 8000;
 const host = Object.values(require('os').networkInterfaces()).reduce((r, list) => r.concat(list.reduce((rr, i) => rr.concat(i.family === 'IPv4' && !i.internal && i.address || []), [])), [])[0];
 const type = 'http'

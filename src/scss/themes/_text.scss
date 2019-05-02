@@ -1,9 +1,3 @@
-@each $level, $map in $text-settings {
-    .#{$level} {
-        @include print($map)
-    }
-}
-
 .text {
     @include responsive-property() {
         &-uppercase {
