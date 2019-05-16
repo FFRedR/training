@@ -41,9 +41,9 @@ $ npm run serve
         img(src=require("./img/logo.png"), alt="")
         ```
     2.   Подключение как ``background-image``:
-        ```
-        div(style="background-image: url(" + require('./img/logo.png') + ")")
-        ```
+            ```
+            div(style="background-image: url(" + require('./img/logo.png') + ")")
+            ```
 2.  Внешние скрипты.
     1.  Все внешние скрипты можно устанавливать через ``npm i`` и подключать уже по месту требования, например
         ```
