@@ -12,8 +12,9 @@ module.exports = env => {
     return {
         mode: env,
         devtool: process.env.NODE_ENV === "production" ? "" : "source-map",
+        context: path.resolve(__dirname, 'src'),
         entry: {
-            app: './src/app',
+            app: './app',
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -81,7 +82,7 @@ module.exports = env => {
                         {
                             loader: "ts-loader",
                             options: {
-                                transpileOnly: true
+                                transpileOnly: true,
                             }
                         }
                     ]
@@ -160,18 +161,18 @@ module.exports = env => {
 
                 }, {
                     test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.wav$|\.mp3$|\.json$/,
+                    exclude: [/fonts/],
                     use: [
                         {
                             loader: 'file-loader',
                             options: {
-                                name: '[path][name].[ext]',
-                                publicPath: process.env.NODE_ENV === "production" ? '../' : '',
+                                name: '[folder]/[name].[ext]',
                                 useRelativePath: false
                             }
                         }
                     ]
                 }, {
-                    test: /\.woff$|\.woff2$|\.eot$|\.ttf$/,
+                    test: /\.woff$|\.woff2$|\.svg$|\.eot$|\.ttf$/,
                     use: [
                         {
                             loader: 'file-loader',
@@ -193,7 +194,9 @@ module.exports = env => {
             modules: ["node_modules"]
         },
         plugins: [
-            new ForkTsCheckerWebpackPlugin(),
+            new ForkTsCheckerWebpackPlugin({
+                tsconfig:  path.resolve(__dirname, './tsconfig.json')
+            }),
             new CleanWebpackPlugin(),///очистка dist
             new MiniCssExtractPlugin({ filename: "css/[name].css" }),
             new webpack.DefinePlugin({
