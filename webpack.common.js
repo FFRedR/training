@@ -4,7 +4,10 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const InterpolateHtmlPlugin = require("interpolate-html-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+
 
 module.exports = env => {
     process.env.NODE_ENV = env;
@@ -195,7 +198,7 @@ module.exports = env => {
         },
         plugins: [
             new ForkTsCheckerWebpackPlugin({
-                tsconfig:  path.resolve(__dirname, './tsconfig.json')
+                tsconfig: path.resolve(__dirname, './tsconfig.json')
             }),
             new CleanWebpackPlugin(),///очистка dist
             new MiniCssExtractPlugin({ filename: "css/[name].css" }),
@@ -209,6 +212,9 @@ module.exports = env => {
                 //Swiper: ["swiper","default"]
             }),
             ...generateHtmlPlugins('src'),
+            new InterpolateHtmlPlugin({
+                'NODE_ENV': env,
+            }),
         ]
     }
 };
@@ -224,9 +230,9 @@ function generateHtmlPlugins(templateDir) {
         // Split names and extension
         const parts = item.split('.')
         const extension = parts[parts.length - 1]
-        parts.splice(parts.length - 1,1)
+        parts.splice(parts.length - 1, 1)
         const name = parts.join('.')
-        
+
         return new HtmlWebpackPlugin({
             filename: `${name}.html`,
             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
