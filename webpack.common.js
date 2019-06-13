@@ -176,6 +176,7 @@ module.exports = env => {
                     ]
                 }, {
                     test: /\.woff$|\.woff2$|\.svg$|\.eot$|\.ttf$/,
+                    exclude: [/img/],
                     use: [
                         {
                             loader: 'file-loader',
