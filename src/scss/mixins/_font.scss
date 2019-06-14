@@ -42,3 +42,7 @@
         content: $icon
     }
 }
+
+@mixin fontSize($size) {
+    font-size: $size / $f-size * 1rem;
+}
