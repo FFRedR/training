@@ -9,6 +9,7 @@
     &::-webkit-input-placeholder { @content; }
 }
 
+/// Reset default broweser form element styles
 @mixin reset-style-form {
     -webkit-appearance: none;
     -moz-appearance: none;

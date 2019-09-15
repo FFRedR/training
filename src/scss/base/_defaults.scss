@@ -5,11 +5,14 @@ html, body {
 
 }
 html {
-    font-size: $f-size;
-    font-family: $f-m;
-    letter-spacing: $f-letter-spacing;
+    font-size: $DEFAULT_FONT_SIZE;
+    font-family: $DEFAULT_FONT_FAMILY;
+    letter-spacing: $DEFAULT_LETTER_SPACING;
 }
 body {
+  font-family: $DEFAULT_FONT_FAMILY;
+  letter-spacing: $DEFAULT_LETTER_SPACING;
+  font-size: $DEFAULT_FONT_SIZE_BODY;
   min-height: 100vh;
   position: relative;
 }
@@ -18,7 +21,6 @@ body {
 img {
     max-width: 100%;
 }
-
 
 @each $level, $map in $text-settings {
   .#{$level} {
@@ -44,7 +46,7 @@ h6 {
   @include text-setting('title');
 }
 p {
-  @include text-setting('body-1');
+  @include text-setting('body');
 }
 a {
 

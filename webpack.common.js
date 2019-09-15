@@ -163,7 +163,7 @@ module.exports = env => {
                     ],
 
                 }, {
-                    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.wav$|\.mp3$|\.json$/,
+                    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.wav$|\.mp3$|\.webm$|\.mp4$|\.json$/,
                     exclude: [/fonts/],
                     use: [
                         {

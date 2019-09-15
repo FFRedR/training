@@ -1,11 +1,12 @@
 /*mixins*/
-@import "mixins/_helpers.scss";
-@import "mixins/_iterators.scss";
-@import "mixins/_font.scss";
-@import "mixins/_graphics.scss";
-@import "mixins/_responsive.scss";
-@import "mixins/_themes.scss";
-@import "mixins/_form.scss";
+@import "abstracts/_variables.scss";
+@import "abstracts/_helpers.scss";
+@import "abstracts/_iterators.scss";
+@import "abstracts/_font.scss";
+@import "abstracts/_graphics.scss";
+@import "abstracts/_responsive.scss";
+@import "abstracts/_themes.scss";
+@import "abstracts/_form.scss";
 
 /*external*/
 
@@ -14,7 +15,6 @@
 */
 /*base*/
 @import "base/_normalize.scss";
-@import "base/_variables.scss";
 @import "base/_defaults.scss";
 
 /*layouts*/
@@ -32,6 +32,8 @@
 @import "themes/_grid.scss";
 @import "themes/_positions.scss";
 @import "themes/_form.scss";
+@import "themes/_images.scss";
+@import "themes/_screen.scss";
 
 /*pages*/
 

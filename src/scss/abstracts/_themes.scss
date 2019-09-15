@@ -1,21 +1,23 @@
-/**
-* theme
-.a {
-  @include themify() {
-    color: themed('textColor');
-    background-color: themed('backgroundColor');
-  }
-}
 
-$themes: (
-  light: (
-    backgroundColor: $c_white,
-  ),
-  dark: (
-    backgroundColor: $c_grey-d2,
-  ),
-);
-**/
+/// * theme
+/// How to use:
+/// Write this:
+/// .a {
+///  @include themify() {
+///    color: themed('textColor');
+///    background-color: themed('backgroundColor');
+///  }
+///}
+///
+/// that converted to:
+///$themes: (
+///  light: (
+///    backgroundColor: $c_white,
+///  ),
+///  dark: (
+///    backgroundColor: $c_grey-d2,
+///  ),
+///);
 @mixin themify($themes: $themes) {
     @each $theme, $map in $themes {
         .theme-#{$theme} & {

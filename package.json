@@ -1,6 +1,6 @@
 {
   "name": "mira-template",
-  "version": "0.6.1",
+  "version": "0.9.6",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch  --progress --config webpack.prod.js",
