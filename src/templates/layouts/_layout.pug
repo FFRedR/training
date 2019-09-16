@@ -35,12 +35,13 @@ html(lang="en")
 	
 	block vars
 	body(class=bodyClass)
-		.all-wrapper
+		#page
+			include ../components/_header-mobile
 			include _header
+			.all-wrapper
+				block content
 
-			block content
-
-		include _footer
+			include _footer
 
 		block externalScripts
 		block scripts
