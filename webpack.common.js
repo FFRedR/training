@@ -132,6 +132,7 @@ module.exports = env => {
                             options: {
                                 sourceMap: process.env.NODE_ENV !== "production",
                                 importLoaders: 2,
+                                url: false,
                             }
                         }, {
                             loader: 'postcss-loader',
