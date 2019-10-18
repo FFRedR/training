@@ -15,7 +15,7 @@ Dependency Installation:
 $ npm i
 ```
 
-# 2. Working with ``webpack``
+# 2. Working with webpack
 **Build project**
 -----------------------------------
 ***
