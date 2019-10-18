@@ -19,7 +19,7 @@ $ npm i
 **Build project**
 -----------------------------------
 ***
-Build command ``webpack``:
+Build command:
 ```
 $ npm run build
 ```
@@ -31,8 +31,6 @@ Run ``dev`` mode:
 $ npm run serve
 ```
 # 3. Features
------------------------------------
-***
 1.  Embedded images and files in `` pug``.
     1.  Load ``img``:
         ```
