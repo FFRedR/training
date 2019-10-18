@@ -1,5 +1,5 @@
 # Introduction
-TODO: Шаблон проектов.
+TODO: Project template.
 
 # Getting Started
 1.	Installation process
