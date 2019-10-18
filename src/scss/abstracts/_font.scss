@@ -118,7 +118,6 @@
 /// @param {String} $icon - icon number
 /// @param {Boolean} $after - if true - will be used :after for icon container
 @mixin font($fm: false, $size: false, $weight: false,  $lh: false, $color: false) {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     @if $fm {
         font-family: $fm;
     }
