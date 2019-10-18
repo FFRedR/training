@@ -80,7 +80,7 @@ $ npm run serve
         //////////any code///////////
     });
     ```
-    Здесь ``webpackChunkName`` задает имя выходного файла для ``slidebars.js``. В данном случае выходным файлом будет ``dist/lib/chunk-slidebars.js``.
+    Here `` webpackChunkName`` sets the name of the output file for `` slidebars.js``. In this case, the output file will be `` dist / lib / chunk-slidebars.js``.
 
 2.  Modules can also be loaded in advance, so that the module has already been loaded during code execution.
     ```
