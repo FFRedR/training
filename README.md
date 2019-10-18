@@ -3,55 +3,52 @@ TODO: Шаблон проектов.
 
 # Getting Started
 1.	Installation process
-2.	Работа с ``webpack``
-3.  Работа с ``npm`` scripts
-4.	Latest releases
-5.	API references
+2.	Working with ``webpack``
+3.  Features
 
 # 1. Installation process
 ```
 $ git clone https://miralab.visualstudio.com/project%20template%20W/_git/project%20template%20W
 ```
-Установка зависимостей:
+Dependency Installation:
 ```
 $ npm i
 ```
 
-# 2. Работа с webpack
-**Собрать проект**
+# 2. Working with ``webpack``
+**Build project**
 -----------------------------------
 ***
-Комманда сборки ``webpack``:
+Build command ``webpack``:
 ```
 $ npm run build
 ```
-**Режим разработчика**
+**Dev mode**
 -----------------------------------
 ***
-Запуск ``dev`` режима ``webpack`` (В этом режиме ниже описанные комманды уже не требуются)
+Run ``dev`` mode:
 ```
 $ npm run serve
 ```
-**Особенности**
+# 3. Features
 -----------------------------------
 ***
-1.  Встроенные изображения и файлы в ``pug``.
-    1.  Подключение ``img``:
+1.  Embedded images and files in `` pug``.
+    1.  Load ``img``:
         ```
         img(src=require("./img/logo.png"), alt="")
         ```
-    2.   Подключение как ``background-image``:
+    2.   Load as ``background-image``:
             ```
             div(style="background-image: url(" + require('./img/logo.png') + ")")
             ```
-2.  Внешние скрипты.
-    1.  Все внешние скрипты можно устанавливать через ``npm i`` и подключать уже по месту требования, например
+2.  External modules.
+    1.  All external scripts can be installed via `` npm i`` and connected already at the place of requirement, for example
         ```
         import * as $ from "jquery";
         ```
-        Скрипт будет подтянут из ``node_modules`` и записан в файл ``lib/chunk-vendors.js``. При этом все скрипты из ``node_modules`` при статчином импорте через ``import from`` запишутся в `lib/chunk-commons.js``.
 
-3.  Чтобы подключить новые страницы, глобальные стили и скрипты используйте ``import`` в файле ``app.js``, например
+3.  To connect global styles and scripts, use `` import`` in the file `` app.js``, for example
     ```
     /**
     * fonts
@@ -68,18 +65,11 @@ $ npm run serve
     * script
     */
     import { MainApp } from './ts/main';
-
-    /**
-    * pages
-    */
-    import './index.pug';
-    import './contacts.pug';
-    import './products.pug';
     ```
-**Динамический импорт**
+**Dynamic import**
 -----------------------------------
 ***
-1.  Динамический импорт позволяет подгружать модули по мере необходимости, например
+1.  Dynamic import allows you to load modules as needed, for example
     ```
     /// file: slidebars.js
     export var slidebars = function () {
@@ -94,8 +84,8 @@ $ npm run serve
     ```
     Здесь ``webpackChunkName`` задает имя выходного файла для ``slidebars.js``. В данном случае выходным файлом будет ``dist/lib/chunk-slidebars.js``.
 
-2.  Так же модули можно загружать заранее, чтобы во время выполнения кода, модуль уже был загружен.
+2.  Modules can also be loaded in advance, so that the module has already been loaded during code execution.
     ```
     import(/* webpackPrefetch: true, webpackChunkName: "slidebar" */"../lib/js/slidebars.js");
     ```
-    При этом сам модуль подключится в ``head`` отдельным тегом.
+    In this case, the module itself will be connected to the `` head`` as a separate tag.
