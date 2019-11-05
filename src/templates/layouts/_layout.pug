@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+doctype html
 html(lang="en")
 	head
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta#viewport(name="viewport", content="width=414, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes")
-		title MiraSiteTemplate
+		title Сравнимка
 		script.
 			//mobile viewport hack
 			(function(){
@@ -34,9 +34,10 @@ html(lang="en")
 			}());
 	
 	block vars
+	include ../abstracts/_mixins
 	body(class=bodyClass)
 		#page
-			include ../components/_header-mobile
+			//include ../components/_header-mobile
 			include _header
 			.all-wrapper
 				block content

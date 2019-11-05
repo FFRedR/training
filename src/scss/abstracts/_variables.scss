@@ -3,12 +3,17 @@
 **/
 $c_white: #ffffff;
 $c_black: #000000;
+$c_gray_main: #666666;
+$c_gray_minor: #cccccc;
+$c_blue_main: #336699;
+$c_blue_light: #00cccc;
+$c_blue_dark: #0099ff;
 
 /***
 * CONSTS
 **/
 //font const
-$DEFAULT_FONT_FAMILY: "Montserrat";
+$DEFAULT_FONT_FAMILY: "Roboto";
 $DEFAULT_FONT_SIZE: 10px;
 $DEFAULT_FONT_SIZE_BODY: font-size(14px);
 $DEFAULT_LETTER_SPACING: 0px;

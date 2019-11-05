@@ -1,2 +1,13 @@
 block header
 	header.header
+		.container-fluid
+			img.header__logo(src="img/logo.png")/
+			nav.main-menu
+				ul.main-menu__links-list
+					+addLink('#', 'Обзоры')
+					+addLink('#', 'Сравнение')
+					+addLink('#', 'Скачать софт')
+					+addLink('#', 'Инструкции')
+					+addLink('#', 'Полезная информация')
+					+addLink('#', 'Новости')
+					+addLink('#', 'Помощь')
