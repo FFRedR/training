@@ -2,12 +2,30 @@ block header
 	header.header
 		.container-fluid
 			img.header__logo(src="img/logo.png")/
-			nav.main-menu
-				ul.main-menu__links-list
-					+addLink('#', 'Обзоры')
-					+addLink('#', 'Сравнение')
-					+addLink('#', 'Скачать софт')
-					+addLink('#', 'Инструкции')
-					+addLink('#', 'Полезная информация')
-					+addLink('#', 'Новости')
-					+addLink('#', 'Помощь')
+			nav.menu
+				ul.menu__links-list
+					li.menu__links-item
+						a(href="#").menu__link="Обзоры"
+					li.menu__links-item
+						a(href="#").menu__link="Сравнение"
+					li.menu__links-item
+						a(href="#").menu__link="Скачать софт"
+						ul.sub-menu__links-list
+							li.sub-menu__links-item
+								a(href="#").sub-menu__link="Электронные почты"
+							li.sub-menu__links-item
+								a(href="#").sub-menu__link="Облачные хранилища"
+							li.sub-menu__links-item
+								a(href="#").sub-menu__link="Менеджеры паролей"
+							li.sub-menu__links-item
+								a(href="#").sub-menu__link="Антивирусные программы"
+							li.sub-menu__links-item
+								a(href="#").sub-menu__link="Мессенджеры"
+					li.menu__links-item
+						a(href="#").menu__link="Инструкции"
+					li.menu__links-item
+						a(href="#").menu__link="Полезная информация"
+					li.menu__links-item
+						a(href="#").menu__link="Новости"
+					li.menu__links-item
+						a(href="#").menu__link="Помощь"						
