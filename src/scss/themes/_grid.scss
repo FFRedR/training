@@ -26,3 +26,13 @@ $grid-gutters: (
     flex-grow: 0;
     flex-shrink: 0;
 }
+.main-content {
+    //padding-top: 12.5rem;
+    padding-top: 15rem;
+    min-height: 1000px;
+    background: $c_blue_light;
+    position: relative;
+    width: 100%;
+    box-shadow: $block_shadow;
+    z-index: 2;
+}

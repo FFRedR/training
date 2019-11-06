@@ -1,13 +1,14 @@
 .footer {
     max-height: 50rem;
-    .container-fluid {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        vertical-align: middle;
-    }
-    
+    padding-top: 6rem;
 }
+.footer .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+}
+
 .footer-copyright{
     &__logo {
         max-width: 30rem;
@@ -15,15 +16,18 @@
 }
 
 .footer-credentials {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    // display: flex;
+    // justify-content: flex-end;
     &__item {
         color: $c_blue_dark;
         font-size: 2rem;
+        display: flex;
         a {
             text-decoration: none;
             color: inherit;
+        }
+        p {
+            font-size: inherit;
         }
     }
 }

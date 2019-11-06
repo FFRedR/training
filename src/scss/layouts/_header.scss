@@ -1,5 +1,20 @@
+@mixin submenu-hover {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  list-style: none;
+  background: $c_black;
+}
+
 .header {
-  height: 125px;
+  height: 12.5rem;
+  padding-top: 2.7rem;
+  position: relative;
+  width: 100%;
+  box-shadow: $block_shadow;
+  z-index: 3;
     &-mobile {
         position: sticky;
         top: 0;
@@ -74,6 +89,9 @@
       justify-content: center;
       vertical-align: middle;
     }
+    &__logo {
+      max-width: 20rem;
+    }
 }
 
 .mm-menu_navbar_bottom-1 .mm-panels {
@@ -95,6 +113,12 @@
     &:nth-last-child {
       margin-right: 0;
     }
+
+    &:hover > .sub-menu {
+      &__links-list {
+        @include submenu-hover;
+      }
+    }
   }
 
   &__link {
@@ -110,13 +134,17 @@
   }
 }
 .sub-menu{
+  &:hover {
+    @include submenu-hover;
+  }
+
   &__links-list {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s ease;
+    margin-top: 1rem;
     display: none;
-    // display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    list-style: none;
-    background: $c_black;
   }
 
   &__links-item {
