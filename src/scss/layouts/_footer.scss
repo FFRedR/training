@@ -1,2 +1,39 @@
 .footer {
+    max-height: 50rem;
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: middle;
+    }
+    
+}
+.footer-copyright{
+    &__logo {
+        max-width: 30rem;
+    }
+}
+
+.footer-credentials {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &__item {
+        color: $c_blue_dark;
+        font-size: 2rem;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: space-around;
+
+    &__info {
+        max-width: 50rem;
+        color: $c_gray_main;
+    }
 }

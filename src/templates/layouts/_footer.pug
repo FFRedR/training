@@ -1,33 +1,51 @@
 block footer
 	footer.footer
-		nav.menu
-				ul.menu__links-list
-					li.menu__links-item
-						a(href="#").menu__link="Обзоры"
-					li.menu__links-item
-						a(href="#").menu__link="Сравнение"
-					li.menu__links-item
-						a(href="#").menu__link="Скачать софт"
-						ul.sub-menu__links-list
-							li.sub-menu__links-item
-								a(href="#").sub-menu__link="Электронные почты"
-							li.sub-menu__links-item
-								a(href="#").sub-menu__link="Облачные хранилища"
-							li.sub-menu__links-item
-								a(href="#").sub-menu__link="Менеджеры паролей"
-							li.sub-menu__links-item
-								a(href="#").sub-menu__link="Антивирусные программы"
-							li.sub-menu__links-item
-								a(href="#").sub-menu__link="Мессенджеры"
-					li.menu__links-item
-						a(href="#").menu__link="Инструкции"
-					li.menu__links-item
-						a(href="#").menu__link="Полезная информация"
-					li.menu__links-item
-						a(href="#").menu__link="Новости"
-					li.menu__links-item
-						a(href="#").menu__link="Помощь"
-		.footer-copyright
-			.footer-copyright__logo
-			.footer-copytight_info
-				p Бла-бла-бла
+		.container-fluid
+			nav.menu
+					ul.menu__links-list
+						li.menu__links-item
+							a(href="#").menu__link="Обзоры"
+						li.menu__links-item
+							a(href="#").menu__link="Сравнение"
+						li.menu__links-item
+							a(href="#").menu__link="Скачать софт"
+							ul.sub-menu__links-list
+								li.sub-menu__links-item
+									a(href="#").sub-menu__link="Электронные почты"
+								li.sub-menu__links-item
+									a(href="#").sub-menu__link="Облачные хранилища"
+								li.sub-menu__links-item
+									a(href="#").sub-menu__link="Менеджеры паролей"
+								li.sub-menu__links-item
+									a(href="#").sub-menu__link="Антивирусные программы"
+								li.sub-menu__links-item
+									a(href="#").sub-menu__link="Мессенджеры"
+						li.menu__links-item
+							a(href="#").menu__link="Инструкции"
+						li.menu__links-item
+							a(href="#").menu__link="Полезная информация"
+						li.menu__links-item
+							a(href="#").menu__link="Новости"
+						li.menu__links-item
+							a(href="#").menu__link="Помощь"
+			.footer-credentials
+				.footer-credentials__item
+					p #[a(href="tel:+74996094132") +7 (499) 609-41-32]
+					img(src=require("./img/phone-icon.svg"))
+				.footer-credentials__item
+					p #[a(href="mailto:contact@geroy.ooo") contact@geroy.ooo]
+					img(src=require("./img/mail-icon.svg"))
+				address.footer-credentials__item
+					p ул Северная 326, Краснодар, Россия
+									
+			.footer-copyright
+				img(src=require("./img/footer-logo.svg")).footer-copyright__logo/
+				.footer-copyright__info
+					p
+						|&copy; информация о правах. Lorem Ipsum - это текст-"рыба",
+						| часто используемый в печати и вэб-дизайне.
+						| Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+						| В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
+						|используя Lorem Ipsum для распечатки образцов. 
+						|Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+					

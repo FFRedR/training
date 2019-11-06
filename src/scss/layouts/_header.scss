@@ -69,6 +69,11 @@
             @extend %auth-mode;
         }
     }
+    .container-fluid {
+      display: flex;
+      justify-content: center;
+      vertical-align: middle;
+    }
 }
 
 .mm-menu_navbar_bottom-1 .mm-panels {
@@ -82,10 +87,11 @@
   &__links-list {
     list-style: none;
     display: flex;
+    align-items: center;
   }
 
   &__links-item {
-    margin-right: 4.8rem;
+    margin-right: 4rem;
     &:nth-last-child {
       margin-right: 0;
     }
@@ -94,18 +100,19 @@
   &__link {
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2rem;
     color: $c_gray_main;
     
     &:hover{
       color: $c_blue_light;
-      font-weight: bolder;
+      font-weight: 1000;
     }
   }
 }
 .sub-menu{
   &__links-list {
-    display: flex;
+    display: none;
+    // display: flex;
     flex-direction: column;
     align-items: stretch;
     list-style: none;
