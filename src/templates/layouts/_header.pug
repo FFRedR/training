@@ -1,7 +1,7 @@
 block header
 	header.header
-		.container-fluid
-			img(src=require("./img/logo.svg")).header__logo/
+		.header__inner.container-fluid
+			img(src=require("./img/logo.svg")).header__logo
 			nav.menu
 				ul.menu__links-list
 					li.menu__links-item
@@ -28,4 +28,4 @@ block header
 					li.menu__links-item
 						a(href="#").menu__link="Новости"
 					li.menu__links-item
-						a(href="#").menu__link="Помощь"						
+						a(href="#").menu__link="Помощь"
