@@ -1,33 +1,23 @@
 block footer
 	footer.footer
-		.container-fluid
+		.footer__menu.container-fluid
 			nav.menu
-					ul.menu__links-list
-						li.menu__links-item
-							a(href="#").menu__link="Обзоры"
-						li.menu__links-item
-							a(href="#").menu__link="Сравнение"
-						li.menu__links-item
-							a(href="#").menu__link="Скачать софт"
-							ul.menu-sub__links-list
-								li.menu-sub__links-item
-									a(href="#").menu-sub__link="Электронные почты"
-								li.menu-sub__links-item
-									a(href="#").menu-sub__link="Облачные хранилища"
-								li.menu-sub__links-item
-									a(href="#").menu-sub__link="Менеджеры паролей"
-								li.menu-sub__links-item
-									a(href="#").menu-sub__link="Антивирусные программы"
-								li.menu-sub__links-item
-									a(href="#").menu-sub__link="Мессенджеры"
-						li.menu__links-item
-							a(href="#").menu__link="Инструкции"
-						li.menu__links-item
-							a(href="#").menu__link="Полезная информация"
-						li.menu__links-item
-							a(href="#").menu__link="Новости"
-						li.menu__links-item
-							a(href="#").menu__link="Помощь"
+				ul.menu__links-list
+					li.menu__links-item
+						a.menu__link(href="#")="Обзоры"
+					li.menu__links-item
+						a.menu__link(href="#")="Сравнение"
+					li.menu__links-item
+						a.menu__link(href="#")="Скачать софт"
+					li.menu__links-item
+						a.menu__link(href="#")="Инструкции"
+					li.menu__links-item
+						a.menu__link(href="#")="Полезная информация"
+					li.menu__links-item
+						a.menu__link(href="#")="Новости"
+					li.menu__links-item
+						a.menu__link(href="#")="Помощь"
+		.container-fluid.footer__contacts
 			.footer-credentials
 				.footer-credentials__item
 					p #[a(href="tel:+74996094132") +7 (499) 609-41-32]
@@ -37,7 +27,7 @@ block footer
 					img(src=require("./img/mail-icon.svg"))
 				address.footer-credentials__item
 					p ул Северная 326, Краснодар, Россия
-									
+		.container-fluid
 			.footer-copyright
 				img(src=require("./img/footer-logo.svg")).footer-copyright__logo/
 				.footer-copyright__info

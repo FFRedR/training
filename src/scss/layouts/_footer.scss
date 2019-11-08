@@ -1,12 +1,14 @@
 .footer {
     max-height: 50rem;
     padding-top: 6rem;
-}
-.footer .container-fluid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    vertical-align: middle;
+    &__menu {
+        display: flex;
+        justify-content: center;
+    }
+    &__contacts {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 .footer-copyright{

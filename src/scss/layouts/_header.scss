@@ -1,3 +1,4 @@
+$header_height: 12.5rem;
 @mixin submenu-hover {
   visibility: visible;
   opacity: 1;
@@ -5,13 +6,12 @@
   flex-direction: column;
   align-items: stretch;
   list-style: none;
-  background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 100%);
+  background: rgb(46, 92, 138);
+  background: $submenu_gradient;
 }
 
 .header {
-  height: 12.5rem;
-  padding-top: 2.7rem;
+  height: $header_height;
   position: relative;
   width: 100%;
   box-shadow: $block_shadow;
@@ -89,6 +89,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      height: $header_height;
+      //margin-top: -1.7rem;
     }
     &__logo {
       max-width: 26rem;
@@ -103,6 +105,8 @@
     display: block!important;
 }
 .menu {
+  display: flex;
+  align-items: center;
   &__links {
     &-list {
       list-style: none;
@@ -120,7 +124,7 @@
           left: 0px;
           top: 100%;
           width: 100%;
-          height: 100px;
+          height: 40px;
         }
         & > .menu-sub {
           &__links-list {
@@ -131,7 +135,8 @@
     }
   }
   &__link {
-    display: inline-block;
+    display: block;
+    padding: 1rem 1rem;
     height: 100%;
     font-family: "Roboto Light";
     text-decoration: none;
@@ -150,13 +155,14 @@
     }
   
     &__links-list {
+      height: 26rem;
       padding-left: 0;
       padding-right: 0;
       visibility: hidden;
       opacity: 0;
       position: absolute;
       transition: all 1s ease;
-      margin-top: 6.1rem;
+      margin-top: 3.9rem;
       display: none;
     }
   
@@ -165,6 +171,7 @@
     }
 
     &__link {
+      font-family: Marmelad;
       display: block;
       padding-left: 5px;
       padding-right: 5px;
