@@ -68,6 +68,9 @@
             @extend %auth-mode;
         }
     }
+    border-bottom: 1px solid $c_orange;
+    box-sizing: border-box;
+    height: 12rem;
 }
 
 .mm-menu_navbar_bottom-1 .mm-panels {
