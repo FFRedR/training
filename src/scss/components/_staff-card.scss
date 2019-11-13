@@ -1,6 +1,10 @@
 .staff{
     display: flex;
+    justify-content: space-between;
     &-card{
         height: 30rem;
+    }
+    &__header {
+        text-align: center;
     }
 }

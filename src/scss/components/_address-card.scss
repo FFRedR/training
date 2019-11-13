@@ -1,6 +1,10 @@
 .address {
     display: flex;
+    justify-content: space-between;
     &-card{
         height: 17rem;
+    }
+    &__header {
+        text-align: center;
     }
 }
