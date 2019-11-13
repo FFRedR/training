@@ -1,7 +1,7 @@
 block header
 	header.header
-		.container.header-inner(style="border: 1px solid black;")
-			img.header__logo
+		.container.header-inner
+			img.header__logo(src=require("./img/logo.png"))
 			nav.header__menu
 				u.menu
 					li.menu__item
@@ -21,4 +21,4 @@ block header
 					li.menu__item
 						a.menu__link(href="#")="Контакты"
 			.header__phone
-				a.header__phone-link
+				a.header__phone-link(href="tel:88002500104")="8-800-250-01-04"

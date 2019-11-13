@@ -1,0 +1,19 @@
+.menu {
+    list-style: none;
+    display: flex;
+    
+    &__item {
+        padding: 0 1.5rem;
+    }
+
+    &__link {
+        color: $c_black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        //font-family: "OpenSans Light";
+        &:hover {
+            color: $c_orange;
+        }
+    }
+}

@@ -71,6 +71,23 @@
     border-bottom: 1px solid $c_orange;
     box-sizing: border-box;
     height: 12rem;
+
+   &-inner {
+    display: flex;
+   } 
+
+   &__logo {
+     max-width: 10rem;
+   }
+
+   &__phone {
+     &-link{
+      font-family: "Roboto";
+      font-size: 1.8rem;
+      color: $c_blue_light;
+      text-decoration: none;
+     } 
+   }
 }
 
 .mm-menu_navbar_bottom-1 .mm-panels {
