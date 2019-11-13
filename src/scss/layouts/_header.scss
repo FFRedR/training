@@ -74,10 +74,16 @@
 
    &-inner {
     display: flex;
+    padding-top: 2.8rem;
+    align-items: baseline;
    } 
 
    &__logo {
      max-width: 10rem;
+   }
+
+   &__menu {
+    align-items: baseline;
    }
 
    &__phone {

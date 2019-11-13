@@ -1,4 +1,11 @@
 .footer {
     background: $c_blue_dark;
     height: 35.5rem;
+
+    &-inner {
+        padding-top: 4.2rem;
+    }
+    &__logo {
+        max-width: 10rem;
+      }
 }
