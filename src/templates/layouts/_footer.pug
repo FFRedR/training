@@ -1,4 +1,70 @@
 block footer
 	footer.footer
 		.container.footer-inner
-			img.footer__logo(src=require("./img/footer-logo.png"))
+			.footer-column
+				img.footer__logo(src=require("./img/footer-logo.png"))
+			.footer-column
+				.menu
+					h3.menu__header="О компании"
+						ul.menu.menu-column
+							li.menu__item
+								a.menu__link(href="#")="О нас"
+							li.menu__item
+								a.menu__link(href="#")="Партнёры"
+							li.menu__item
+								a.menu__link(href="#")="Отзывы"
+							li.menu__item
+								a.menu__link(href="#")="Политика конфиденциальности"
+				.menu
+					h3.menu__header="Решения"
+						ul.menu.menu-column
+							li.menu__item
+								a.menu__link(href="#")="Вода"
+							li.menu__item
+								a.menu__link(href="#")="Земля"
+							li.menu__item
+								a.menu__link(href="#")="Воздух"
+			.footer-column
+				.menu
+					h3.menu__header="Сервис"
+						ul.menu.menu-column
+							li.menu__item
+								a.menu__link(href="#")="Smart Service LookOut"
+							li.menu__item
+								a.menu__link(href="#")="Wialon"
+							li.menu__item
+								a.menu__link(href="#")="Скаут"
+				.menu
+					h3.menu__header="Сервисные центры"
+						ul.menu.menu-column
+							li.menu__item
+								a.menu__link(href="#")="Сертифицированные СЦ"
+							li.menu__item
+								a.menu__link(href="#")="Как стать сервисным центром"
+			.footer-column
+				.menu
+					h3.menu__header="Новости"
+						ul.menu.menu-column
+							li.menu__item
+								a.menu__link(href="#")="Новости"
+							li.menu__item
+								a.menu__link(href="#")="Статьи"
+							li.menu__item
+								a.menu__link(href="#")="Видео"
+							li.menu__item
+								a.menu__link(href="#")="Фото"
+							li.menu__item
+								a.menu__link(href="#")="Мероприятия"
+				.menu
+					h3.menu__header="Дилеры"
+						ul.menu.menu-column
+							li.menu__item
+								a.menu__link(href="#")="где купить"
+							li.menu__item
+								a.menu__link(href="#")="Для дилеров"
+		hr.footer__delimeter
+		.copyright
+			.copyright-style
+			.copyright-studio
+block scripts
+	script(src="https://use.fontawesome.com/28f1be9980.js")

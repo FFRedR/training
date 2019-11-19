@@ -4,6 +4,11 @@
     &__item {
         padding: 0 1.5rem;
     }
+    
+    &__header {
+        color: $c_blue_light;
+        font-weight: bolder;
+    }
 
     &__link {
         color: $c_black;
@@ -14,6 +19,22 @@
         text-decoration: none;
         &:hover {
             color: $c_orange;
+            border-bottom: 1px solid $c_orange;
+        }
+    }
+    &-column {
+        flex-direction: column;
+    }
+}
+.footer {
+    .menu {
+        line-height: 1.5rem;
+
+        &__link {
+            color: $c_blue_light;
+            &:hover {
+                border-bottom: none;
+            }
         }
     }
 }

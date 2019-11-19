@@ -4,8 +4,17 @@
 
     &-inner {
         padding-top: 4.2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: ". . . .";
     }
+    
     &__logo {
         max-width: 10rem;
       }
+    &__delimeter {
+        border-top: 1px solid $c_black;
+        border-bottom: 1px solid $c_blue_medium;
+    }  
 }
