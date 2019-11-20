@@ -3,6 +3,18 @@ block footer
 		.container.footer-inner
 			.footer-column
 				img.footer__logo(src=require("./img/footer-logo.png"))
+				.footer-contacts
+					.addres__address
+						|<i class='fa fa-map-marker' aria-hidden='true'></i>
+						|300004, Тула, Щегловская засека, 30"
+					.address__time
+						|<i class='fa fa-clock-o' aria-hidden='true'></i>
+						|ПН-ПТ: с 9.00 до 18.00
+					.address__phones
+						|
+						| 8 (800) 250-01-04 (звонок бесплатный).
+						| +7-4872-70-05-82
+					a.address_email(href="mail:to")="lookout@ssoft24.com"
 			.footer-column
 				.menu
 					h3.menu__header="О компании"
