@@ -1,20 +1,52 @@
 .footer {
+    font-family: "Roboto";
     background: $c_blue_dark;
+    color: $c_blue_light;
     height: 35.5rem;
 
     &-inner {
         padding-top: 4.2rem;
+        height: 300px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: ". . . .";
     }
-    
+
+    &-contacts {
+        padding-top: 1.5rem;
+        font-style: unset;
+        height: 11.5rem;
+        display: flex;
+        flex-direction: column;
+        & * {
+            margin-bottom: 0;
+        }
+    }
+
     &__logo {
         max-width: 10rem;
       }
     &__delimeter {
         border-top: 1px solid $c_black;
         border-bottom: 1px solid $c_blue_medium;
-    }  
+    } 
+
+    .address {
+        &__email {
+            padding-top:2.5rem;
+            color: $c_blue_light;   
+        }
+    }
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    &__info, &__studio {
+        font-size: 1.2rem;
+    }
+    &__link {
+        color: $c_blue_light;
+    }
 }

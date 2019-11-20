@@ -7,7 +7,7 @@
     
     &__header {
         color: $c_blue_light;
-        font-weight: bolder;
+        font-size: 1.6rem;
     }
 
     &__link {
@@ -30,7 +30,10 @@
     .menu {
         line-height: 1.5rem;
         padding-left: 0;
+        display: flex;
+        flex-direction: column;
         &__link {
+            text-transform: none;
             color: $c_blue_light;
             &:hover {
                 border-bottom: none;

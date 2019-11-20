@@ -3,42 +3,43 @@ block footer
 		.container.footer-inner
 			.footer-column
 				img.footer__logo(src=require("./img/footer-logo.png"))
-				.footer-contacts
-					.addres__address
+				address.footer-contacts
+					p.addres__address
 						|<i class='fa fa-map-marker' aria-hidden='true'></i>
-						|300004, Тула, Щегловская засека, 30"
-					.address__time
+						|300004, Тула, Щегловская засека, 30
+					p.address__time
 						|<i class='fa fa-clock-o' aria-hidden='true'></i>
 						|ПН-ПТ: с 9.00 до 18.00
-					.address__phones
-						|
-						| 8 (800) 250-01-04 (звонок бесплатный).
-						| +7-4872-70-05-82
-					a.address_email(href="mail:to")="lookout@ssoft24.com"
+					p.address__phones
+						|<i class='fa fa-phone' aria-hidden='true'></i>
+						|8 (800) 250-01-04, +7-4872-70-05-82
+					a.address__email(href="mail:to")
+						|<i class='fa fa-at' aria-hidden='true'></i>
+						|lookout@ssoft24.com
 			.footer-column
-				.menu
-					h3.menu__header="О компании"
-						ul.menu.menu-column
-							li.menu__item
-								a.menu__link(href="#")="О нас"
-							li.menu__item
-								a.menu__link(href="#")="Партнёры"
-							li.menu__item
-								a.menu__link(href="#")="Отзывы"
-							li.menu__item
-								a.menu__link(href="#")="Политика конфиденциальности"
-				.menu
-					h3.menu__header="Решения"
-						ul.menu.menu-column
-							li.menu__item
-								a.menu__link(href="#")="Вода"
-							li.menu__item
-								a.menu__link(href="#")="Земля"
-							li.menu__item
-								a.menu__link(href="#")="Воздух"
+				.footer-menu
+					a.menu__header="О компании"
+					ul.menu.menu-column
+						li.menu__item
+							a.menu__link(href="#")="О нас"
+						li.menu__item
+							a.menu__link(href="#")="Партнёры"
+						li.menu__item
+							a.menu__link(href="#")="Отзывы"
+						li.menu__item
+							a.menu__link(href="#")="Политика конфиденциальности"
+				.footer-menu
+					a.menu__header="Решения"
+					ul.menu.menu-column
+						li.menu__item
+							a.menu__link(href="#")="Вода"
+						li.menu__item
+							a.menu__link(href="#")="Земля"
+						li.menu__item
+							a.menu__link(href="#")="Воздух"
 			.footer-column
-				.menu
-					h3.menu__header="Сервис"
+				.footer-menu
+					a.menu__header="Сервис"
 						ul.menu.menu-column
 							li.menu__item
 								a.menu__link(href="#")="Smart Service LookOut"
@@ -46,16 +47,18 @@ block footer
 								a.menu__link(href="#")="Wialon"
 							li.menu__item
 								a.menu__link(href="#")="Скаут"
-				.menu
-					h3.menu__header="Сервисные центры"
+				.footer-menu
+					a.menu__header="Оборудование"				
+				.footer-menu
+					a.menu__header="Сервисные центры"
 						ul.menu.menu-column
 							li.menu__item
 								a.menu__link(href="#")="Сертифицированные СЦ"
 							li.menu__item
 								a.menu__link(href="#")="Как стать сервисным центром"
 			.footer-column
-				.menu
-					h3.menu__header="Новости"
+				.footer-menu
+					a.menu__header="Новости"
 						ul.menu.menu-column
 							li.menu__item
 								a.menu__link(href="#")="Новости"
@@ -67,16 +70,20 @@ block footer
 								a.menu__link(href="#")="Фото"
 							li.menu__item
 								a.menu__link(href="#")="Мероприятия"
-				.menu
-					h3.menu__header="Дилеры"
+				.footer-menu
+					a.menu__header="Дилеры"
 						ul.menu.menu-column
 							li.menu__item
 								a.menu__link(href="#")="где купить"
 							li.menu__item
 								a.menu__link(href="#")="Для дилеров"
+				.footer-menu
+					a.menu__header="Контакты"				
 		hr.footer__delimeter
-		.copyright
-			.copyright-style
-			.copyright-studio
+		.container.copyright
+				p.copyright__info © ГК «СервисСофт», 2017. Информация носит ознакомительный характер и не является публичной офертой. Политика конфиденциальности.
+				p.copyright__studio
+					|Разработка сайта: 
+					a.copyright__link(href="https://belugalab.com/")="BelugaLabs"
 block scripts
 	script(src="https://use.fontawesome.com/28f1be9980.js")
