@@ -3,6 +3,7 @@
  */
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import './fonts/OpenSans/stylesheet.css';
+import './fonts/Roboto/stylesheet.css';
 
 /**
  * style lib

@@ -2,6 +2,11 @@
     &-delimeter {
         border-color: $c_gray;
     }
+    &-section {
+        &__slot {
+            margin: 3em 0;
+        }
+    }
     &__header {
         text-align: center;
     }

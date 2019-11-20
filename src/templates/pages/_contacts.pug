@@ -1,78 +1,81 @@
 .map
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d590.2981535528253!2d91.42282682927552!3d53.71483099875364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDQyJzUzLjQiTiA5McKwMjUnMjQuMiJF!5e0!3m2!1sru!2sru!4v1573594539517!5m2!1sru!2sru" width="100%" height="425" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-.contacts-block
-    .container.contacts-block
-        h2.contacts__header="Контакты"
-        .address
-            address.address-card
-                h3.address__name="Головной офис:"
-                .addres__address
-                    |<i class='fa fa-map-marker' aria-hidden='true'></i> 
-                    |300004, Тула, Щегловская засека, 30"
-                .address__time
-                    |<i class='fa fa-clock-o' aria-hidden='true'></i> 
-                    |ПН-ПТ: с 9.00 до 18.00
-                .address__phones
-                    |<i class='fa fa-phone' aria-hidden='true'></i> 
-                    | 8 (800) 250-01-04 (звонок бесплатный).
-                    | +7-4872-70-05-82
-                a.address__email(href="mailto:lookout@ssoft24.com")
-                        |<i class='fa fa-at' aria-hidden='true'></i>
-                        |lookout@ssoft24.com
-            address.address-card
-                h3.address__name="Офис в Москве:"
-                .addres__address
-                    |<i class='fa fa-map-marker' aria-hidden='true'></i> 
-                    |300004, Тула, Щегловская засека, 30"
-                .address__time
-                    |<i class='fa fa-clock-o' aria-hidden='true'></i> 
-                    |ПН-ПТ: с 9.00 до 18.00
-                .address__phones
-                    |<i class='fa fa-phone' aria-hidden='true'></i> 
-                    | 8 (800) 250-01-04 (звонок бесплатный).
-                    | +7-4872-70-05-82
-                a.address__email(href="mailto:lookout@ssoft24.com")
-                        |<i class='fa fa-at' aria-hidden='true'></i>
-                        |lookout@ssoft24.com
-            address.address-card
-                h3.address__name="Офис в Санкт-Петербурге:"
-                .addres__address
-                    |<i class='fa fa-map-marker' aria-hidden='true'></i> 
-                    |300004, Тула, Щегловская засека, 30"
-                .address__time
-                    |<i class='fa fa-clock-o' aria-hidden='true'></i> 
-                    |ПН-ПТ: с 9.00 до 18.00
-                .address__phones
-                    |<i class='fa fa-phone' aria-hidden='true'></i> 
-                    | 8 (800) 250-01-04 (звонок бесплатный).
-                    | +7-4872-70-05-82
-                a.address__email(href="mailto:lookout@ssoft24.com")
-                        |<i class='fa fa-at' aria-hidden='true'></i>
-                        |lookout@ssoft24.com
-.container              
-    hr.contacts-delimeter                
-.staff-block
-    .container.contacts-block
-        h2.contacts__header="Сотрудники"
-        .staff
-            .staff-card
-                .staff__image-wrap
-                    .staff__image(style="background-image:url(https://steamuserimages-a.akamaihd.net/ugc/198550000750007331/BED2DF35A80FF802DA5C8A73109FD1613128ED8A/)")
-                h3.staff__name="Кузьмин Вячеслав Викторович"
-                .staff-phone="тел.: +7 (960)605-14-91"
-                .staff-skype="skype: ssoft_spb"
-                .staff-email="email: spb-opim1@ssoft24.com"
-            .staff-card
-                .staff__image-wrap
-                    .staff__image(style="background-image:url(https://avatanplus.com/files/resources/mid/5aed62fb174441632f4aa4d7.png)")
-                h3.staff__name="Кузьмин Вячеслав Викторович"
-                .staff-phone="тел.: +7 (960)605-14-91"
-                .staff-skype="skype: ssoft_spb"
-                .staff-email="email: spb-opim1@ssoft24.com"
-            .staff-card
-                .staff__image-wrap
-                    .staff__image(style="background-image:url(http://ii.yakuji.moe/tran/src/1532342441503.jpg)")
-                h3.staff__name="Кузьмин Вячеслав Викторович"
-                .staff-phone="тел.: +7 (960)605-14-91"
-                .staff-skype="skype: ssoft_spb"
-                .staff-email="email: spb-opim1@ssoft24.com"
+
+section.section.contacts-section
+    .container
+        .contacts-section__slot
+            .contacts-block
+                .contacts-block
+                    h2.contacts__header Контакты
+                    .address
+                        address.address-card
+                            h3.address__name="Головной офис:"
+                            p.addres__address
+                                |<i class='fa fa-map-marker' aria-hidden='true'></i> 
+                                |300004, Тула, Щегловская засека, 30"
+                            p.address__time
+                                |<i class='fa fa-clock-o' aria-hidden='true'></i> 
+                                |ПН-ПТ: с 9.00 до 18.00
+                            p.address__phones
+                                |<i class='fa fa-phone' aria-hidden='true'></i> 
+                                | 8 (800) 250-01-04 (звонок бесплатный).
+                                | +7-4872-70-05-82
+                            p    
+                                <i class='fa fa-at' aria-hidden='true'></i>
+                                a.address__email(href="mailto:lookout@ssoft24.com") lookout@ssoft24.com
+                        address.address-card
+                            h3.address__name="Офис в Москве:"
+                            p.addres__address
+                                |<i class='fa fa-map-marker' aria-hidden='true'></i> 
+                                |300004, Тула, Щегловская засека, 30"
+                            p.address__time
+                                |<i class='fa fa-clock-o' aria-hidden='true'></i> 
+                                |ПН-ПТ: с 9.00 до 18.00
+                            p.address__phones
+                                |<i class='fa fa-phone' aria-hidden='true'></i> 
+                                | 8 (800) 250-01-04 (звонок бесплатный).
+                                | +7-4872-70-05-82
+                            p    
+                                <i class='fa fa-at' aria-hidden='true'></i>
+                                a.address__email(href="mailto:lookout@ssoft24.com") lookout@ssoft24.com
+                        address.address-card
+                            h3.address__name="Офис в Санкт-Петербурге:"
+                            p.addres__address
+                                |<i class='fa fa-map-marker' aria-hidden='true'></i> 
+                                |300004, Тула, Щегловская засека, 30"
+                            p.address__time
+                                |<i class='fa fa-clock-o' aria-hidden='true'></i> 
+                                |ПН-ПТ: с 9.00 до 18.00
+                            p.address__phones
+                                |<i class='fa fa-phone' aria-hidden='true'></i> 
+                                | 8 (800) 250-01-04 (звонок бесплатный).
+                                | +7-4872-70-05-82
+                            p    
+                                <i class='fa fa-at' aria-hidden='true'></i>
+                                a.address__email(href="mailto:lookout@ssoft24.com") lookout@ssoft24.com
+        hr.contacts-delimeter
+        .contacts-section__slot
+            .staff-block.contacts-block
+                h2.contacts__header Сотрудники
+                .staff
+                    .staff-card
+                        .staff__image-wrap
+                            img.staff__image(src=require("../../img/staff.jpg") alt="")
+                        h3.staff__name="Кузьмин Вячеслав Викторович"
+                        .staff-phone="тел.: +7 (960)605-14-91"
+                        .staff-skype="skype: ssoft_spb"
+                        .staff-email="email: spb-opim1@ssoft24.com"
+                    .staff-card
+                        .staff__image-wrap
+                            img.staff__image(src=require("../../img/staff.jpg") alt="")
+                        h3.staff__name="Кузьмин Вячеслав Викторович"
+                        .staff-phone="тел.: +7 (960)605-14-91"
+                        .staff-skype="skype: ssoft_spb"
+                        .staff-email="email: spb-opim1@ssoft24.com"
+                    .staff-card
+                        .staff__image-wrap
+                            img.staff__image(src=require("../../img/staff.jpg") alt="")
+                        h3.staff__name="Кузьмин Вячеслав Викторович"
+                        .staff-phone="тел.: +7 (960)605-14-91"
+                        .staff-skype="skype: ssoft_spb"
+                        .staff-email="email: spb-opim1@ssoft24.com"

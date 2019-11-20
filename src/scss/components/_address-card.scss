@@ -1,12 +1,41 @@
 .address {
     display: flex;
-    justify-content: space-between;
-    &-card{
-        height: 17rem;
+    flex-wrap: wrap;
+    margin: -$grid-gutter-width / 2;
+    line-height: px-to-em(22px, 14px);
+    & * {
+        margin-bottom: 5px;
+        
+    }
+    p {
+        line-height: px-to-em(22px, 14px);
+        display: grid;
+        grid-template-columns: 15px auto;
+        grid-column-gap: 15px;
+    }
+    .fa {
+        color: $c_blue-l4;
+        font-size: px-to-em(18px, 14px);
+        justify-self: center;
+    }
+    &-card {
+        width: calc(100% / 3);
+        //height: 17rem;
         font-style: unset;
+        padding: $grid-gutter-width / 2;
+        @include media-breakpoint-down(md) {
+            width: calc(100% / 2);
+        }
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+
     }
     &__name {
         color: $c_blue_light;
         font-weight: bolder;
+    }
+    &__email {
+        color: black;
     }
 }

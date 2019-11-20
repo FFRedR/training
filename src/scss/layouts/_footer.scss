@@ -2,21 +2,23 @@
     font-family: "Roboto";
     background: $c_blue_dark;
     color: $c_blue_light;
-    height: 35.5rem;
-
     &-inner {
         padding-top: 4.2rem;
-        height: 300px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: ". . . .";
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     &-contacts {
         padding-top: 1.5rem;
         font-style: unset;
-        height: 11.5rem;
         display: flex;
         flex-direction: column;
         & * {
