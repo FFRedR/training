@@ -1,4 +1,7 @@
 .contacts {
+    &-delimeter {
+        border-color: $c_gray;
+    }
     &__header {
         text-align: center;
     }
