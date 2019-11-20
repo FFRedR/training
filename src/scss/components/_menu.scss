@@ -24,6 +24,7 @@
     }
     &-column {
         flex-direction: column;
+        margin-bottom: 0;
     }
 }
 .footer {
@@ -39,5 +40,11 @@
                 border-bottom: none;
             }
         }
+        &__item {
+            margin-left: -1.5rem;
+        }
+    }
+    &-menu {
+        padding-bottom: 1.5rem;
     }
 }
