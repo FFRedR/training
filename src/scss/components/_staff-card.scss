@@ -1,12 +1,24 @@
 .staff{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     &-card{
-        height: 30rem;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: calc(100% / 3);
+        @include media-breakpoint-down(md) {
+            width: calc(100% / 2);
+        }
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+
+        p {
+            line-height: px-to-em(18px, 14px);
+        }
+
     }
     &__image {
         width: 100%;
