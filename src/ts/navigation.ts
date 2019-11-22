@@ -14,10 +14,14 @@ export namespace Navigation {
                 "pagedim-black",
                 "shadow-page"
             ],
-
+            "navbar": {
+                "title": "Меню",
+            },
+            
             "navbars": [
                 document.querySelector('.header-mobile__auth-wrapper') ? {
                     "position": "top",
+                    
                     "content": [
                         `
                         <div class="header-mobile__auth">
@@ -31,7 +35,7 @@ export namespace Navigation {
                     "content": [
                         `${document.querySelector('.header-mobile__tel') ? document.querySelector('.header-mobile__tel').innerHTML : ''}`
                     ]
-                }
+                },
             ],
             "iconbar": {
                 "add": true,

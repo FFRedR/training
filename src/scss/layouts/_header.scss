@@ -1,114 +1,121 @@
 .header {
-    &-mobile {
-      &-bar{
-        @include media-breakpoint-up(sm) {
-          display: none;
-        }
-      }
-      
-        position: sticky;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        transform: translate3d(0,0,0);
-        box-shadow: 0px 1px 20px 0px #0000007d;
-        background-color: $c_white;
-        .container {
-          max-width: none
-        }
-        &__menu {
-          font-size: 1.8rem;
-          --mm-color-background: #{$c_white};
-          --mm-color-border: #4b4b4b4a;
-          --mm-color-text: #{$c_black};
-          --mm-color-button: #{$c_black};
-          --mm-color-text-dimmed: #{$c_black};
-          --mm-navbar-size: 60px;
-          .mm-panels {
-            .mm-navbar, .mm-panel_has-navbar {
-              --mm-navbar-size: 44px;
-            }
-          }
-          .mm-navbars_bottom {
-            .mm-navbar {
-              --mm-navbar-size: 44px;
-            }
-          }
-          &.is-auth {
-            --mm-navbar-size: 105px;
-            %auth-mode {
-              padding: 12px;
-            }
-          }
-          .mm-listitem {
-              i {
-                  margin-right: 10px;
-              }
-          }
-        }
-        &__avatar {
-          display: block;
-          width: 80px;
-          @include responsive-ratio(1,1, true);
-          border: 1px solid rgba(51, 51, 51, 0.575);
-          border-radius: 50%;
-          @include covered-image();
-        }
-        &__link {
-          width: 40px;
-          height: 40px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid rgba(51, 51, 51, 0.575);
-          border-radius: 50%;
-        }
-        &__auth {
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            & > * {
-              flex-grow: 1;
-            }
-            @extend %auth-mode;
-        }
-    }
-    border-bottom: 1px solid $c_orange;
-    box-sizing: border-box;
-    height: 12rem;
-    @include media-breakpoint-down(sm) {
-      display: none;
-    }
+	border-bottom: 1px solid $c_orange;
+	box-sizing: border-box;
+	height: 12rem;
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+	&-mobile {
+		display: flex;
+		justify-content: space-between;
+		padding: .5rem 1.5rem;
+		position: sticky;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		transform: translate3d(0,0,0);
+		box-shadow: 0px 1px 20px 0px #2929297d;
+		border-bottom: 1px solid $c_black;
+		background-color: $c_white;
+		.container {
+			max-width: none
+		}
+		@include media-breakpoint-up(xl) {
+			display: none;
+		}
+		@include media-breakpoint-down(sm) {
+			padding: 0 1.5rem;
+		}
+		&__menu {
+			font-size: 1.8rem;
+			--mm-color-background: #{$c_white};
+			--mm-color-border: #4b4b4b4a;
+			--mm-color-text: #{$c_black};
+			--mm-color-button: #{$c_black};
+			--mm-color-text-dimmed: #{$c_black};
+			--mm-navbar-size: 60px;
+			.mm-panels {
+				.mm-navbar, .mm-panel_has-navbar {
+					--mm-navbar-size: 44px;
+				}
+			}
+			.mm-navbars_bottom {
+				.mm-navbar {
+					--mm-navbar-size: 44px;
+				}
+			}
+			&.is-auth {
+				--mm-navbar-size: 105px;
+				%auth-mode {
+					padding: 12px;
+				}
+			}
+			.mm-listitem {
+				i {
+						margin-right: 10px;
+				}
+			}
+		}
+		&__avatar {
+			display: block;
+			width: 80px;
+			@include responsive-ratio(1,1, true);
+			border: 1px solid rgba(51, 51, 51, 0.575);
+			border-radius: 50%;
+			@include covered-image();
+		}
+		&__link {
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid rgba(51, 51, 51, 0.575);
+			border-radius: 50%;
+		}
+		&__auth {
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			& > * {
+				flex-grow: 1;
+			}
+			@extend %auth-mode;
+		}
+		&__logo {
+			width: 7.5rem;
+			object-fit: contain;
+		}
+	}
+	&-inner {
+		display: flex;
+		padding-top: 2.8rem;
+		align-items: baseline;
+	} 
 
-   &-inner {
-    display: flex;
-    padding-top: 2.8rem;
-    align-items: baseline;
-   } 
+	&__logo {
+		max-width: 10rem;
+	}
 
-   &__logo {
-     max-width: 10rem;
-   }
+	&__menu {
+		align-items: baseline;
+	}
 
-   &__menu {
-    align-items: baseline;
-   }
-
-   &__phone {
-     &-link{
-      font-family: "Roboto";
-      font-size: 1.8rem;
-      color: $c_blue_light;
-      text-decoration: none;
-     } 
-   }
+	&__phone {
+		&-link{
+		font-family: "Roboto";
+		font-size: 1.8rem;
+		color: $c_blue_light;
+		text-decoration: none;
+		} 
+	}
 }
 
 .mm-menu_navbar_bottom-1 .mm-panels {
-    bottom: 44px
+		bottom: 44px
 }
 
 .mm-menu_offcanvas.mm-menu_opened {
-    display: block!important;
+		display: block!important;
 }
