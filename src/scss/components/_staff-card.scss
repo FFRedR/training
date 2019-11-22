@@ -1,6 +1,7 @@
 .staff{
     display: flex;
     flex-wrap: wrap;
+    margin: -$grid-gutter-width / 2;
     &-card{
         display: flex;
         flex-wrap: wrap;
@@ -8,6 +9,7 @@
         justify-content: center;
         align-items: center;
         width: calc(100% / 3);
+        padding: $grid-gutter-width / 2;
         @include media-breakpoint-down(md) {
             width: calc(100% / 2);
         }
@@ -16,7 +18,9 @@
         }
 
         p {
+            margin: 0.5rem 0;
             line-height: px-to-em(18px, 14px);
+            font-weight: bolder;
         }
 
     }
@@ -43,5 +47,14 @@
     &__name {
         color: $c_blue_light;
         font-weight: bolder;
+        position: relative;
+        &:after {
+            content: ' ';
+            border-bottom: 1px solid $c_gray;
+            width: 5rem;
+            position:absolute;
+            left:40%;
+            top: 3rem;
+        }
     }
 }
