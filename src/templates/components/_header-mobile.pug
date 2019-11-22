@@ -1,41 +1,22 @@
-#mobile-menu.header-mobile__menu(style="display: none")
+#mobile-menu.header-mobile__menu
     ul
-        li
-            a(href="#") Test
         li.current-menu-item
-            a(href="#") Test 2
-        if !auth
-            li
-                a(href="#")
-                    i.fas.fa-sign-in-alt
-                    | Login
-            li
-                a(href="#")
-                    i.fas.fa-user-plus
-                    | Register
-    ul.icon-top
+            a(href="#") О компании
         li
-            a(href='#', target='_blank')
-                i.fab.fa-facebook-f
+            a(href="#") Новости
         li
-            a(href='#', target='_blank')
-                i.fab.fa-twitter
+            a(href="#") Оборудование
         li
-            a(href='#', target='_blank')
-                i.fab.fa-instagram
+            a(href="#") Решения
+        li
+            a(href="#") Сервис
+        li
+            a(href="#") Дилеры
+        li
+            a(href="#") Сервисные центры
+        li
+            a(href="#") Контакты        
     .header-mobile__tel
         a(href='tel: 866-812-6190')
             i.fas.fa-phone-alt.mr-3
             | 111-111-1111
-    if !unauthorized
-        .header-mobile__auth-wrapper
-            .container-fluid
-                .row.gutter-lg.justify-content-center.align-items-center
-                    .col-auto
-                        a.header-mobile__link(href="#")
-                            i.fas.fa-cog
-                    .col-auto
-                        a.header-mobile__avatar(href="#" style="background-image: none")
-                    .col-auto
-                        a.header-mobile__link(href="#")
-                            i.fas.fa-users
