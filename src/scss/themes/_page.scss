@@ -1,13 +1,22 @@
 .page {
     &-content {
         display: flex;
-        @include media-breakpoint-down(md) {
+        justify-content: space-between;
+        @include media-breakpoint-down(lg) {
             flex-direction: column;
         }
     }
 
+    &-section {
+        @include media-breakpoint-up(lg) {
+            max-width: 790px;
+        }
+        width:100%;
+    }
+
     &-sidebar {
-        min-width: 300px;
+        max-width: 300px;
+        width: 100%;
        
     }
 }

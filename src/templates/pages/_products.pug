@@ -7,14 +7,14 @@
 .container
     h1.page-header Оборудование
     .page-content
-        section.section.products-section
+        section.section.products-section.page-section
             while products++ < 12
                 .products-card
                     img.products-card__image(src=require("../../img/product.png"), alt="")
                     a.products-card__name(href="#!") Lorem ipsum
                     p.products-card__description 
                         |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-        aside.page-sidebar
+        aside.side.page-sidebar
             nav.categories-nav
                 ul.categories-nav__list
                     li.categories-nav__item
@@ -27,4 +27,12 @@
                         a.categories-nav__link(href="#") Категория 4
                     li.categories-nav__item
                         a.categories-nav__link(href="#") Категория 5
-            img.side-banner(src=require("../../img/banner.png"))            
+            img.side-banner(src=require("../../img/banner.png"))
+            article.side-post
+                img.side-post__image(src=require("../../img/post-image.png"))
+                .side-post-container
+                    a.side-post__link(href="#") Сложившаяся структура организации
+                    p.side-post__excerpt Повседневная практика показывает, что укрепление и развитие структуры позволяет
+                    footer.side-post-footer
+                        date.side-post__date 26.10.2017
+                        a.side-post__expand >

@@ -1,0 +1,35 @@
+.side {
+    &-post {
+        border: 1px solid $c_gray;
+        background: $c_gray1;
+
+        &-container {
+            padding: 33px;
+        }
+
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        &__link {
+            color: $c_blue_light;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        &__excerpt {
+            line-height: px-to-em(22px, 14px);
+        }
+
+        &__date {
+            color: $c_blue_light;
+        }
+
+        &__expand {
+            color: $c_orange;
+            font-weight: bold;
+        }
+    }
+}
