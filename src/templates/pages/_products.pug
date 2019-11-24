@@ -1,0 +1,30 @@
+-var products = 0;
+.header-mobile
+    .hamburger.hamburger--slider.js-hamburger
+        .hamburger-box
+            .hamburger-inner
+    img.header-mobile__logo(src=require("../../img/logo.png"))
+.container
+    h1.page-header Оборудование
+    .page-content
+        section.section.products-section
+            while products++ < 12
+                .products-card
+                    img.products-card__image(src=require("../../img/product.png"), alt="")
+                    a.products-card__name(href="#!") Lorem ipsum
+                    p.products-card__description 
+                        |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+        aside.page-sidebar
+            nav.categories-nav
+                ul.categories-nav__list
+                    li.categories-nav__item
+                        a.categories-nav__link(href="#") Категория 1
+                    li.categories-nav__item
+                        a.categories-nav__link(href="#") Категория 2
+                    li.categories-nav__item
+                        a.categories-nav__link.categories-nav__link_active(href="#") Категория 3
+                    li.categories-nav__item
+                        a.categories-nav__link(href="#") Категория 4
+                    li.categories-nav__item
+                        a.categories-nav__link(href="#") Категория 5
+            img.side-banner(src=require("../../img/banner.png"))            

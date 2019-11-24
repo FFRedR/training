@@ -1,0 +1,17 @@
+.categories {
+    &-nav {
+        &__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+        &__link {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $c_gray;
+            &:hover,  &_active{
+                color: $c_orange;
+            }
+        }
+    }
+}
