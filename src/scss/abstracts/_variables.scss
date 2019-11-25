@@ -80,9 +80,9 @@ $text-settings: (
     color: $c_blue-l4,
   ),
   'display-4': ( // as h1
-    font-size: font-size(28px),
+    font-size: font-size(30px),
     line-height: line-height(34px, 28px),
-    font-weight: bold,
+    font-weight: lighter,
     letter-spacing: letter-spacing(0),
     font-family: $f-r,
   )

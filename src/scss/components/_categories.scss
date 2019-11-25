@@ -1,15 +1,25 @@
 .categories {
     &-nav {
         &__list {
+            margin: 0;
+            padding-left: 0;
             list-style: none;
             display: flex;
             flex-direction: column;
+            line-height: px-to-em(22px, 14px);
+        }
+        
+        &__item {
+            &:hover, &_active{
+                list-style-type: disc;
+                color: $c_orange;
+            }
         }
         &__link {
             text-transform: uppercase;
             text-decoration: none;
             color: $c_gray;
-            &:hover,  &_active{
+            &:hover, &_active{
                 color: $c_orange;
             }
         }

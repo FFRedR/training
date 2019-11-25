@@ -4,14 +4,19 @@
         grid-column-gap: 30px;
         grid-row-gap: 42px;
         grid-template-columns: 1fr 1fr 1fr;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
             grid-template-columns: 1fr 1fr;
+            grid-column-gap: auto;
         }
         @include media-breakpoint-down(sm) {
             grid-template-columns: 1fr;
         }
     }
     &-card {
+        &-container {
+            padding-top: 25px;
+        }
+
         &__image {
             box-sizing: border-box;
             border: 1px solid $c_gray;
@@ -19,6 +24,7 @@
             height: 100%;
             object-fit: contain;
         }
+
         &__name {
             display: block;
             font-size: 1.8rem;
@@ -26,6 +32,7 @@
             color: $c_blue_light;
             text-decoration: none; 
         }
+
         &__description {
             font-size: 1.4rem;
             line-height: px-to-em(22px, 14px);
