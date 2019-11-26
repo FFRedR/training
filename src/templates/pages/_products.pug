@@ -1,4 +1,3 @@
--var products = 0;
 .header-mobile
     .hamburger.hamburger--slider.js-hamburger
         .hamburger-box
@@ -8,15 +7,17 @@
     h1.page__header Оборудование
     .page-content
         section.section.products-section.page-section
-            while products++ < 12
-                .products-card
-                    img.products-card__image(src=require("../../img/product.png"), alt="")
-                    .products-card-container
-                        a.products-card__name(href="#!") Lorem ipsum
-                        p.products-card__description 
-                            |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            .products-list
+                for i in new Array(12)
+                    .products-card
+                        img.products-card__image(src=require("../../img/product.png"), alt="")
+                        .products-card-container
+                            a.products-card__name(href="#!") Lorem ipsum
+                            p.products-card__description 
+                                |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
         aside.side.page-sidebar
-            nav.categories-nav
+            nav.categories-nav(aria-labeledby="cat-title")
+                h2#cat-title.d-lg-none  Категории
                 ul.categories-nav__list
                     li.categories-nav__item
                         a.categories-nav__link(href="#") Категория 1
@@ -30,10 +31,12 @@
                         a.categories-nav__link(href="#") Категория 5
             img.side-banner(src=require("../../img/banner.png"))
             article.side-post
-                img.side-post__image(src=require("../../img/post-image.png"))
+                a.site-post__image-link
+                    img.side-post__image(src=require("../../img/post-image.png"))
                 .side-post-container
                     a.side-post__link(href="#") Сложившаяся структура организации
                     p.side-post__excerpt Повседневная практика показывает, что укрепление и развитие структуры позволяет
                     footer.side-post-footer
                         date.side-post__date 26.10.2017
-                        a.side-post__expand >
+                        a.side-post__expand(href="#") >
+            

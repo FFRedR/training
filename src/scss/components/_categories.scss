@@ -1,5 +1,8 @@
 .categories {
     &-nav {
+        @include media-breakpoint-down(md) {
+            padding: 30px 30px;
+        }
         &__list {
             margin: 0;
             padding-left: 0;
@@ -8,7 +11,6 @@
             flex-direction: column;
             line-height: px-to-em(22px, 14px);
         }
-        
         &__item {
             &:hover, &_active{
                 list-style-type: disc;

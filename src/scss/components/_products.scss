@@ -1,17 +1,20 @@
 .products {
     &-section {
+    }
+
+    &-list {
         display: grid;
         grid-column-gap: 30px;
         grid-row-gap: 42px;
         grid-template-columns: 1fr 1fr 1fr;
         @include media-breakpoint-down(lg) {
             grid-template-columns: 1fr 1fr;
-            grid-column-gap: auto;
         }
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(xs) {
             grid-template-columns: 1fr;
         }
     }
+
     &-card {
         &-container {
             padding-top: 25px;
